@@ -48,7 +48,10 @@ __Per Base Sequence Quality__
 
 | Accession | Galaxy | ASC |
 | ------ | ------ | ------ |
-|SRR8541909|<img src="images/per_base_quality_SRR8541909_Galaxy.png" width="800" alt="Per Base Quality of SRR8541909 from Galaxy">|<img src="images/per_base_quality_SRR8541909_ASC.png" width="800">|
-|SRR8541910|<img src="images/per_base_quality_SRR8541910_Galaxy.png" width="800" alt="Per Base Quality of SRR8541910 from Galaxy">|<img src="images/per_base_quality_SRR8541910_ASC.png" width="800" alt="Per Base Quality of SRR8541910 from ASC">|
-|SRR8541914|<img src="images/per_base_quality_SRR8541914_Galaxy.png" width="800" alt="Per Base Quality of SRR8541914 from Galaxy">|<img src="images/per_base_quality_SRR8541914_ASC.png" width="800"> alt="Per Base Quality of SRR8541914 from ASC"|
-|SRR8541934|<img src="images/per_base_quality_SRR8541934_Galaxy.png" width="800" alt="Per Base Quality of SRR8541934 from Galaxy">|<img src="images/per_base_quality_SRR8541934_ASC.png" width="800" alt="Per Base Quality of SRR8541934 from ASC">|
+|SRR8541909|Forward and Reverse<br><img src="images/per_base_quality_SRR8541909_Galaxy.png" width="400" alt="Per Base Quality of SRR8541909 from Galaxy">|Forward and Reverse Concatenated<br><img src="images/per_base_quality_SRR8541909_ASC.png" width="400">|
+|SRR8541910|Forward <br> <img src="images/per_base_quality_SRR8541910_Galaxy.png" width="400" alt="Per Base Quality of SRR8541910 from Galaxy">|Forward and Reverse Concatenated <br> <img src="images/per_base_quality_SRR8541910_ASC.png" width="400" alt="Per Base Quality of SRR8541910 from ASC">|
+
+|incomplete|||
+|---|---|---|
+|SRR8541914|Reverse<img src="images/per_base_quality_SRR8541914_Galaxy.png" width="800" alt="Per Base Quality of SRR8541914 from Galaxy">|Forward and Reverse Concatenated<img src="images/per_base_quality_SRR8541914_ASC.png" width="800" alt="Per Base Quality of SRR8541914 from ASC">|
+|SRR8541934|Reverse<img src="images/per_base_quality_SRR8541934_Galaxy.png" width="800" alt="Per Base Quality of SRR8541934 from Galaxy">|Forward and Reverse Concatenated<img src="images/per_base_quality_SRR8541934_ASC.png" width="800" alt="Per Base Quality of SRR8541934 from ASC">|
