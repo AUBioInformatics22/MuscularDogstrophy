@@ -48,7 +48,7 @@ __Per Base Sequence Quality__
 
 | Accession | Galaxy | ASC |
 | - | - | - |
-| SRR8541909 | image | ![per_base_quality_SRR8541909](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541909.png) |
-| SRR8541910 | image | ![per_base_quality_SRR8541910](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541910.png) |
-| SRR8541914 | image | ![per_base_quality_SRR8541914](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541914.png) |
-| SRR8541934 | image | ![per_base_quality_SRR8541934](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541934.png) |
+| SRR8541909 | ![per_base_quality_SRR8541909_Galaxy](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541909_Galaxy.jpg) | ![per_base_quality_SRR8541909_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541909_ASC.png) |
+| SRR8541910 | ![per_base_quality_SRR8541910_Galaxy](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541910_Galaxy.jpg) | ![per_base_quality_SRR8541910_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541910_ASC.png) |
+| SRR8541914 | image | ![per_base_quality_SRR8541914_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541914_ASC.png) |
+| SRR8541934 | image | ![per_base_quality_SRR8541934_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541934_ASC.png) |
