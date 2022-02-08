@@ -47,8 +47,8 @@ Based on the results, our group agrees that filtering to exclude poor quality re
 __Per Base Sequence Quality__
 
 | Accession | Galaxy | ASC |
-| - | - | - |
-| SRR8541909 | ![per_base_quality_SRR8541909_Galaxy](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541909_Galaxy.png) | ![per_base_quality_SRR8541909_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541909_ASC.png) |
-| SRR8541910 | ![per_base_quality_SRR8541910_Galaxy](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541910_Galaxy.png) | ![per_base_quality_SRR8541910_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541910_ASC.png) |
-| SRR8541914 | image | ![per_base_quality_SRR8541914_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541914_ASC.png) |
-| SRR8541934 | image | ![per_base_quality_SRR8541934_ASC](https://github.com/AUBioInformatics22/MuscularDogstrophy/blob/main/images/per_base_quality_SRR8541934_ASC.png) |
+| ------ | ------ | ------ |
+|SRR8541909|<img src="images/per_base_quality_SRR8541909_Galaxy.png" width="800" alt="Per Base Quality of SRR8541909 from Galaxy">|<img src="images/per_base_quality_SRR8541909_ASC.png" width="800">|
+|SRR8541910|<img src="images/per_base_quality_SRR8541910_Galaxy.png" width="800" alt="Per Base Quality of SRR8541910 from Galaxy">|<img src="images/per_base_quality_SRR8541910_ASC.png" width="800" alt="Per Base Quality of SRR8541910 from ASC">|
+|SRR8541914|<img src="images/per_base_quality_SRR8541914_Galaxy.png" width="800" alt="Per Base Quality of SRR8541914 from Galaxy">|<img src="images/per_base_quality_SRR8541914_ASC.png" width="800"> alt="Per Base Quality of SRR8541914 from ASC"|
+|SRR8541934|<img src="images/per_base_quality_SRR8541934_Galaxy.png" width="800" alt="Per Base Quality of SRR8541934 from Galaxy">|<img src="images/per_base_quality_SRR8541934_ASC.png" width="800" alt="Per Base Quality of SRR8541934 from ASC">|
