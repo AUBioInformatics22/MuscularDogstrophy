@@ -12,15 +12,14 @@ Four representative canine genomes (publicly accessible) were selected (SRR85419
 <br>
     __Galaxy__  
     SRR8541910 coverage = (100 x 224,534,605) / 2,445,000,000= 9.2x  
-    SRR8541909 coverage = (100 x 568, 822, 872) / 2,445,000, 000 = 23.3x  
-    SRR8541914 coverage = (100 x 185,573,093 / 2,445,000,000 = 7.6x
-    
+    SRR8541909 coverage = (100 x 568, 822, 872) / 2,445,000,000 = 23.3x  
+    SRR8541914 coverage = (100 x 185,573,093 / 2,445,000,000 = 7.6x  
     SRR8541934 coverage = (101 x 206,248,578 / 2,445,000,000 = 8.5x
 
     
     __ASC__  
     SRR8541910 coverage = (200 x 174,071,554) / 2,445,000,000 = 14.2x  
-    SRR8541909 coverage = (200 x 160,095,698) / 2, 445, 000, 000 = 13.1x  
+    SRR8541909 coverage = (200 x 160,095,698) / 2,445,000,000 = 13.1x  
     SRR8541914 coverage = (200 x 155,729,705) / 2,445,000,000 = 12.7x  
     SRR8541934 coverage = (200* x 206,248,578) / 2,445,000,000 = 16.9x  
             *for this sample, sequence length was reported on FASTQC as 145-202 bp  
@@ -64,8 +63,5 @@ __Per Base Sequence Quality__
 | ------ | ------ | ------ |
 |SRR8541909|<img src="images/per_base_quality_SRR8541909_Galaxy.png" width="405" alt="Per Base Quality of SRR8541909 from Galaxy">|<img src="images/per_base_quality_SRR8541909_ASC.png" width="400">|
 |SRR8541910|<img src="images/per_base_quality_SRR8541910_Galaxy.png" width="405" alt="Per Base Quality of SRR8541910 from Galaxy">|<img src="images/per_base_quality_SRR8541910_ASC.png" width="400" alt="Per Base Quality of SRR8541910 from ASC">|
-
-|incomplete|||
-|---|---|---|
-|SRR8541914|<img src="images/per_base_quality_SRR8541914_Galaxy.png" width="800" alt="Per Base Quality of SRR8541914 from Galaxy">|<img src="images/per_base_quality_SRR8541914_ASC.png" width="800" alt="Per Base Quality of SRR8541914 from ASC">|
-|SRR8541934|<img src="images/per_base_quality_SRR8541934_Galaxy.png" width="800" alt="Per Base Quality of SRR8541934 from Galaxy">|<img src="images/per_base_quality_SRR8541934_ASC.png" width="800" alt="Per Base Quality of SRR8541934 from ASC">|
+|SRR8541914|<img src="images/per_base_quality_SRR8541914_Galaxy.png" width="400" alt="Per Base Quality of SRR8541914 from Galaxy">|<img src="images/per_base_quality_SRR8541914_ASC.png" width="400" alt="Per Base Quality of SRR8541914 from ASC">|
+|SRR8541934|<img src="images/per_base_quality_SRR8541934_Galaxy.png" width="400" alt="Per Base Quality of SRR8541934 from Galaxy">|<img src="images/per_base_quality_SRR8541934_ASC.png" width="400" alt="Per Base Quality of SRR8541934 from ASC">|
