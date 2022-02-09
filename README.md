@@ -14,6 +14,7 @@ Four representative canine genomes (publicly accessible) were selected (SRR85419
     SRR8541910 coverage = (100 x 224,534,605) / 2,445,000,000= 9.2x  
     SRR8541909 coverage = (100 x 568, 822, 872) / 2,445,000, 000 = 23.3x  
     SRR8541914 coverage = (100 x 185,573,093 / 2,445,000,000 = 7.6x
+    
     SRR8541934 coverage = (101 x 206,248,578 / 2,445,000,000 = 8.5x
 
     
