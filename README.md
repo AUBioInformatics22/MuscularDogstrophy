@@ -26,7 +26,7 @@ Four representative canine genomes (publicly accessible) were selected (SRR85419
 <br>
 
 ### Summary
-For the first step of the group project, we divided the work as follows: Cassidy and Becca did step one, Jackie, Allison, and Kyndall did step two, Allison, Kyndall, and Becca wrote the summary report for step three, and Cassidy uploaded it to Github.  
+For the first step of the group project, we divided the work as follows: Cassidy and Becca did step one, Jackie, Allison, and Kyndall did step two, we all wrote the summary report for step three, and Cassidy uploaded it to Github.  
 
 For step one, Cassidy used Dr. Stevison’s script which uses the SRA toolkit on the command line to download the sequence files onto the ASC. Becca executed a script to initiate FASTQC version 0.10.1 on the ASC command line. The job was submitted to the medium node with 4 cores and a 16gb memory limit and finished within 8 hours for our 4 genome sequence files. FASTQC was executed using 4 threads to increase computing performance and efficiency. The job completed with 91.94% parallel efficiency and 6.48% memory efficiency. Using rsync, we were able to transfer the fastqc output files from the ASC to an Ubuntu VM and visualize the html report in a web browser.   
 
