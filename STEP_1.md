@@ -4,7 +4,7 @@
 Four representative canine genomes (publicly accessible) were selected (SRR8541910, SRR8541909, SRR8541914, SRR8541934) to practice our processing pipeline in preparation for the actual sequence files. All four samples were taken from Labrador Retrievers to minimize genetic breed differences. SRR8541914 and SRR8541934 were isolated from females while SRR8541910 and SRR8541909 were taken from males.   
 
 
-### Analysis 
+### Analysis
 (number of reads x read length)/genome size  
 <br>
     __Galaxy__  
@@ -13,7 +13,7 @@ Four representative canine genomes (publicly accessible) were selected (SRR85419
     SRR8541914 coverage = (100 x 185,573,093 / 2,445,000,000 = 7.6x  
     SRR8541934 coverage = (101 x 206,248,578 / 2,445,000,000 = 8.5x
 
-    
+
     __ASC__  
     SRR8541910 coverage = (200 x 174,071,554) / 2,445,000,000 = 14.2x  
     SRR8541909 coverage = (200 x 160,095,698) / 2,445,000,000 = 13.1x  
@@ -49,7 +49,7 @@ The differences in these output FASTQ files led to differences in the FastQC rep
 \*\*\*\*NOTE: TESTING IF FASTQC VERSION AFFECTS OUTPUT: Using a single sequence file as a test, Becca attempted to run fastqc without indicating a specific version on the ASC (module load fastqc/ vs. module load/fastqc/0.10.1). (She also attempted to load the same version that Galaxy uses (module load/fastqc/0.11.8)  but this wouldn’t work). However, for unknown reasons, the job was unable to process.  
 <br>
 
-### Move forward or continue filtering? 
+### Move forward or continue filtering?
 Based on the results, our group agrees that filtering to exclude poor quality reads would be appropriate. Despite inconsistencies in the FASTQC quality reports between Galaxy and ASC, we agree that trimming of the last 10 bp should be performed for all samples due to poor quality as evidenced by Phred scores below 20. Additional trimming may need to be performed on individual samples.  
 <br>
 
@@ -58,7 +58,7 @@ __Per Base Sequence Quality__
 
 | Accession | Galaxy | ASC |
 | :------: | :------: | :------: |
-|SRR8541909|<img src="images/per_base_quality_SRR8541909_Galaxy.png" width="405" alt="Per Base Quality of SRR8541909 from Galaxy"><br>Forward and Reverse|<img src="images/per_base_quality_SRR8541909_ASC.png" width="400"><br>Forward and Reverse Concatenated|
-|SRR8541910|<img src="images/per_base_quality_SRR8541910_Galaxy.png" width="405" alt="Per Base Quality of SRR8541910 from Galaxy"><br>Forward |<img src="images/per_base_quality_SRR8541910_ASC.png" width="400" alt="Per Base Quality of SRR8541910 from ASC"><br>Forward and Reverse Concatenated|
-|SRR8541914|<img src="images/per_base_quality_SRR8541914_Galaxy.png" width="400" alt="Per Base Quality of SRR8541914 from Galaxy"><br>Forward |<img src="images/per_base_quality_SRR8541914_ASC.png" width="400" alt="Per Base Quality of SRR8541914 from ASC"><br>Forward and Reverse Concatenated|
-|SRR8541934|<img src="images/per_base_quality_SRR8541934_Galaxy.png" width="400" alt="Per Base Quality of SRR8541934 from Galaxy"><br>Forward |<img src="images/per_base_quality_SRR8541934_ASC.png" width="400" alt="Per Base Quality of SRR8541934 from ASC"><br>Forward and Reverse Concatenated|
+|SRR8541909|<img src="1_fastqc_reports/images/per_base_quality_SRR8541909_Galaxy.png" width="405" alt="Per Base Quality of SRR8541909 from Galaxy"><br>Forward and Reverse|<img src="1_fastqc_reports/images/per_base_quality_SRR8541909_ASC.png" width="400"><br>Forward and Reverse Concatenated|
+|SRR8541910|<img src="1_fastqc_reports/images/per_base_quality_SRR8541910_Galaxy.png" width="405" alt="Per Base Quality of SRR8541910 from Galaxy"><br>Forward |<img src="1_fastqc_reports/images/per_base_quality_SRR8541910_ASC.png" width="400" alt="Per Base Quality of SRR8541910 from ASC"><br>Forward and Reverse Concatenated|
+|SRR8541914|<img src="1_fastqc_reports/images/per_base_quality_SRR8541914_Galaxy.png" width="400" alt="Per Base Quality of SRR8541914 from Galaxy"><br>Forward |<img src="1_fastqc_reports/images/per_base_quality_SRR8541914_ASC.png" width="400" alt="Per Base Quality of SRR8541914 from ASC"><br>Forward and Reverse Concatenated|
+|SRR8541934|<img src="1_fastqc_reports/images/per_base_quality_SRR8541934_Galaxy.png" width="400" alt="Per Base Quality of SRR8541934 from Galaxy"><br>Forward |<img src="1_fastqc_reports/images/per_base_quality_SRR8541934_ASC.png" width="400" alt="Per Base Quality of SRR8541934 from ASC"><br>Forward and Reverse Concatenated|
