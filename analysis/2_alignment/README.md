@@ -9,8 +9,8 @@ Genome Size: 2,312,802,198
 | SRR8541914 | 76.33 | 67.95 | 4.74 | 0.140527 | 5,682,829 | 4,337,834 | 1.76991 |  |
 
 #### Calculating Coverage:
-SRR8541909 = ( x ) / 2,312,802,198 = 
+SRR8541909 = ( read count * read length ) / 2,312,802,198 = 
 
-SRR8541910 = ( x ) / 2,312,802,198 =
+SRR8541910 = ( read count * read length ) / 2,312,802,198 =
 
-SRR8541914 = ( x ) / 2,312,802,198 =
+SRR8541914 = ( read count * read length ) / 2,312,802,198 =
