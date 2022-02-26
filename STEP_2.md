@@ -23,3 +23,8 @@ Bam file
 ### Contributions 
 
 Kyndall and Cassidy did the majority of the work on the command line with Becca and Allison helping to troubleshoot any errors, Allison wrote the report, Jackie made the histograms, and Cassidy formatted the report into markdown and put it into GitHub. 
+
+## Side Note
+
+The alignment code never worked on the practice sequences we were using the code would run for upwards of three hours and then get an out of memory error no matter 
+how much memory/cores we added. The code will hopefully run on the real data which will be trimmed to look at the X chromosome specifically which will be a lot less data. There were no errors within the alignment code other than the out of memory errors. The code has been broken up by taking out the pipes and putting them on seperate lines to avoid the memory error but continued to fail. We are still trouble shooting the scripts so this read me will be updated with the data and histograms when the real data has been used and hopefully the out of memory error avoided.
