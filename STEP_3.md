@@ -1,1 +1,1 @@
-
+We are currently in the process of cutting down to four sequences: two female and two male. With those four sequences they are currently running through the alignment code and then will be running them through the duplicates sequence which has been edited to prepare for the sequences once they have been run through the alignment
