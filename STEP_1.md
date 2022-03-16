@@ -1,7 +1,7 @@
 ## Step 1: Initial Quality Assessment of Raw NGS Data
 
 ### Move forward or continue filtering?
-Based on the results, our group agrees that filtering to exclude poor quality reads would be appropriate. Despite inconsistencies in the FASTQC quality reports between Galaxy and ASC, we agree that trimming of the last 10 bp should be performed for all samples due to poor quality as evidenced by Phred scores below 20. Additional trimming may need to be performed on individual samples.  
+__UPDATE THIS!!__ Based on the results, our group agrees that filtering to exclude poor quality reads would be appropriate. We agree that trimming of the last 10 bp should be performed for all samples due to poor quality as evidenced by Phred scores below 20.  Additional trimming may need to be performed on individual samples.  
 <br>
 
 ### Graphical Analysis
