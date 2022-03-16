@@ -1,0 +1,11 @@
+PASS	Basic Statistics	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+PASS	Per base sequence quality	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+FAIL	Per tile sequence quality	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+PASS	Per sequence quality scores	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+WARN	Per base sequence content	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+FAIL	Per sequence GC content	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+PASS	Per base N content	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+PASS	Sequence Length Distribution	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+PASS	Sequence Duplication Levels	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+PASS	Overrepresented sequences	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
+PASS	Adapter Content	H2LCVDSX3_s1_2_IDT8_UDI_030_i7-IDT8_UDI_030_i5_6797-RN-0007.fastq.gz
