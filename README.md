@@ -18,7 +18,10 @@ Genomic DNA was isolated from 4 affected males and 4 carrier females from the Sp
 | Iris | Carrier Female | SL522596 |
 | Ruby | Carrier Female | SL522597 |
 
-## Reports
 
-#### [Step 1 Report: Initial Quality Assessment of Raw NGS Data](STEP_1.md)
-#### [Step 2 Report: Alignment of sequencing reads to reference genome](STEP_2.md)
+## Practice Data Reports
+
+Before the sequencing data was received, example data was used to develop the pipeline.
+
+#### [Step 1 Practice Report: Initial quality assessment of raw NGS data](practice_reports/STEP_1.md)
+#### [Step 2 Practice Report: Alignment of sequencing reads to reference genome](practice_reports/STEP_2.md)
