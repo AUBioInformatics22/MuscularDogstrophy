@@ -1,11 +1,16 @@
 ## Step 1: Initial Quality Assessment of Raw NGS Data
 
 ### Move forward or continue filtering?
+
 __UPDATE THIS!!__ Based on the results, our group agrees that filtering to exclude poor quality reads would be appropriate. We agree that trimming of the last 10 bp should be performed for all samples due to poor quality as evidenced by Phred scores below 20.  Additional trimming may need to be performed on individual samples.  
+
+__TODO!!__ Pick representative graphs from the selection. Add discussion about quality and selected graphs.  
+
 <br>
 
 ### Graphical Analysis
-__Per Base Sequence Quality__
+
+__Per Base Sequence Quality__  
 
 | Sample | Per Base Quality Forward | Per Base Quality Reverse |
 | :------: | :------: | :------: |
