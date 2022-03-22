@@ -30,10 +30,11 @@ WHAT we did
 #### QC
 
 Coverage Estimates:
-_bar chart here_
+<img src="analysis/0_figures/3_coverage.png"  alt="Coverage of Sequences">
 
 Percent Duplication:
-_histogram here_
+<img src="analysis/0_figures/percent_duplicates.png"  alt="Percent Duplication of Sequences">
+
 
 #### IGV
 
