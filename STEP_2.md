@@ -32,38 +32,32 @@ _These scripts are still running, so we don't have all the values yet to make th
 
 ### Figures
 
-<img src="analysis/0_figures/step2_coverage_plot.png"  alt="Coverage Bar Graph">  
+<img src="analysis/0_figures/2_coverage.png"  alt="Coverage Bar Graph">  
 
-__Figure 1.__ A bar graph showing coverage for each sample at different stages of processing (values in Table 1?).
+__Figure 2.__ A bar plot showing coverage for each sample at different stages of processing (values in Table 2).  
 
-| Sample ID | Whole Genome Raw Coverage | Estimated Raw chrX Coverage | Aligned chrX Coverage |
-| :-----: | :-----: | :-----: | :-----: |
-| 0001 | 23.701 | 1.11513 | 11.3141 |
-| 0002 | 23.454 | 1.10351 |  |
-| 0003 | 20.936 | 0.985039 |  |
-| 0004 | 25.68  | 1.20824 |  |
-| 0005 | 17.964 | 0.845206 |  |
-| 0006 | 22.089 | 1.03929 |  |
-| 0007 | 25.502 | 1.19987 |  |
-| 0008 | 23.214 | 1.09222 |  |
+<br>
 
-__Table 1.__ Comparing coverage values. The estimated raw X chromsome (chrX) coverage was calculated for each sample by multiplying the whole genome raw coverage value by 0.04705. 
+| Sample ID | Raw Whole Genome | Aligned Chromosome X |
+|:---------:|:----------------:|:--------------------:|
+|   0001    |      23.701      |       11.3141        |
+|   0002    |      23.454      |       11.2097        |
+|   0005    |      17.964      |       15.0552        |
+|   0006    |      22.089      |       18.4987        |
+
+__Table 2.__ Comparing coverage values. _The estimated raw X chromsome (chrX) coverage was calculated for each sample by multiplying the whole genome raw coverage value by 0.04705._  
 
 <br><br>
   
-<img src="analysis/0_figures/percent_mapped.png"  alt="Percent Mapped Histogram">  
+<img src="analysis/0_figures/percent_mapped.png"  alt="Percent Mapped Histogram">
 
-__Figure 2.__ A histogram showing the percent mapped for the X chromosome for each sample (values in Table 2).  
+__Figure 3.__ A bar plot showing the percent mapped for the X chromosome for each sample (values in Table 2).  
 
-| Sample ID | Percent Mapped (chrX) |
-| :-----: | :-----: |
-| 0001 | 87.05 |
-| 0002 |  |
-| 0003 |  |
-| 0004 |  |
-| 0005 |  |
-| 0006 |  |
-| 0007 |  |
-| 0008 |  |
+| Sample ID | Percent Mapped |
+|:---------:|:--------------:|
+|   0001    |     87.05      |
+|   0002    |     88.57      |
+|   0005    |     86.89      |
+|   0006    |     87.55      |
 
-__Table 2.__ The percent mapped for the X chromosome for each sample.  
+__Table 3.__ The percent mapped for the X chromosome for each sample.  

@@ -10,7 +10,23 @@ __TODO!!__ Pick representative graphs from the selection. Add discussion about q
 
 ### Graphical Analysis
 
-__Per Base Sequence Quality__  
+#### Coverage
+
+<img src="analysis/0_figures/1_coverage.png"  alt="Raw Data Whole Genome Coverage Bar Graph">  
+
+__Figure 1.__ A bar graph showing coverage for each sample at different stages of processing (values in Table 1).  
+
+| Sample ID | Raw Whole Genome |
+|:---------:|:----------------:|
+|   0001    |      23.701      |
+|   0002    |      23.454      |
+|   0005    |      17.964      |
+|   0006    |      22.089      |
+
+__Table 1.__ Calculated coverage of the raw data for the whole genome by sequence.  
+
+
+#### Per Base Sequence Quality 
 
 | Sample | Per Base Quality Forward | Per Base Quality Reverse |
 | :------: | :------: | :------: |
@@ -23,7 +39,7 @@ __Per Base Sequence Quality__
 |0007|<img src="analysis/1_fastqc_reports/0007_1_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Foward Reads from Sample 0007">|<img src="analysis/1_fastqc_reports/0007_2_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Reverse Reads from Sample 0007">|
 |0008|<img src="analysis/1_fastqc_reports/0008_1_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Foward Reads from Sample 0008">|<img src="analysis/1_fastqc_reports/0008_2_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Reverse Reads from Sample 0008">|
 
-### FastQC Graphs for Sample 0001
+#### FastQC Graphs for Sample 0001
 
 | Quality Check | Forward | Reverse |
 | :------: | :------: | :------: |
