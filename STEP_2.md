@@ -2,7 +2,7 @@
 
 #### Discussion
 
-We first indexed our canine reference genome (canFam6) using bwa mem and the script: 0_index_genome.sh. We then aligned the samples to the reference genome using the script: 3_align_chrX.sh. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using samtools view. We used samtools flagstat and samtools depth to summarize the alignment quality of our sequences, and then generated a bar graph of coverage, including raw and aligned data using the script: coverage.R. The histogram of percent mapped was produced using the script: percent_mapped.R.
+We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using samtools view. We used samtools flagstat and samtools depth to summarize the alignment quality of our sequences, and then generated a bar graph of coverage, including raw and aligned data using the script: `coverage.R`. The histogram of percent mapped was produced using the script: `percent_mapped.R`.
 
 #### Trimming
 
