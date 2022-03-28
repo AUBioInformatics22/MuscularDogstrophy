@@ -23,7 +23,7 @@ Screenshot Highlights:
 _pictures here_
 
 #### Contributions
-Jacqueline Barry: graphical analysis and discussion
-Rebecca Nance: IGV analysis
-Cassidy Schnieder: gathered quality metrics
-Kyndall Skelton: sorted, indexed, and marked duplicates
+Jacqueline Barry: graphical analysis and discussion  
+Rebecca Nance: IGV analysis  
+Cassidy Schnieder: gathered quality metrics  
+Kyndall Skelton: sorted, indexed, and marked duplicates  
