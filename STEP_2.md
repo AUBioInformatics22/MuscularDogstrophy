@@ -1,18 +1,8 @@
 ## Step 2: Alignment of sequencing reads to reference genome
 
-### Process 
+#### Discussion
 
-1. Index the reference genome (canFam6) using `bwa mem`. Script: `0_index_genome.sh`
-2. Consider trimming. 
-3. Align samples to the reference genome. Script: `3_align_chrX.sh`
-4. Subset X chromosome using `samtools view`.
-5. Consider aligning untrimmed reads and comparing to trimmed reads.
-6. Summarize alignment quality using `samtools flagstat` and `samtools depth`.
-7. Compare coverage between raw and aligned data.
-8. Create a bar graph of coverage, including raw and aligned data. Script: `coverage.R`
-9. Create a histogram of percent mapped. Script: `percent_mapped.R`
-
-### Discussion
+We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using samtools view. We used samtools flagstat and samtools depth to summarize the alignment quality of our sequences, and then generated a bar graph of coverage, including raw and aligned data using the script: `coverage.R`. The histogram of percent mapped was produced using the script: `percent_mapped.R`.
 
 #### Trimming
 
