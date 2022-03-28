@@ -9,14 +9,13 @@ a. Take screen shots from IGV of before and after to show quality improvement du
 
 ### Figures
 
-#### QC
-
-Coverage Estimates:
 <img src="analysis/0_figures/3_coverage.png"  alt="Coverage of Sequences">
 
-Percent Duplication:
+__Figure 1.___ Bar plot of coverage across several stages of processing.
+
 <img src="analysis/0_figures/percent_duplicates.png"  alt="Percent Duplication of Sequences">
 
+__Figure 2.___ Bar plot of the found percentage of duplications.
 
 #### IGV
 
@@ -24,7 +23,7 @@ Screenshot Highlights:
 _pictures here_
 
 #### Contributions
-Jacqueline Barry:
-Rebecca Nance:
-Cassidy Schnieder:
-Kyndall skelton:
+Jacqueline Barry: graphical analysis and discussion
+Rebecca Nance: IGV analysis
+Cassidy Schnieder: gathered quality metrics
+Kyndall Skelton: sorted, indexed, and marked duplicates
