@@ -11,11 +11,11 @@ a. Take screen shots from IGV of before and after to show quality improvement du
 
 <img src="analysis/0_figures/3_coverage.png"  alt="Coverage of Sequences">
 
-__Figure 1.___ Bar plot of coverage across several stages of processing.
+__Figure 1.__ Bar plot of coverage across several stages of processing.
 
 <img src="analysis/0_figures/percent_duplicates.png"  alt="Percent Duplication of Sequences">
 
-__Figure 2.___ Bar plot of the found percentage of duplications.
+__Figure 2.__ Bar plot of the found percentage of duplications.
 
 #### IGV
 
