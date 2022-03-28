@@ -16,10 +16,6 @@ There is a large difference in the raw coverage and aligned coverage values. The
 
 For one sample (0001), we determined percent mapped for the whole genome before extracting the sequences that mapped to the X chromosome. We then determined the percent mapped for just the X chromosome. For the whole genome, 74.81% mapped, and for the X chromosome, 87.05% mapped.
 
-#### Visualizing coverage and percent mapped
-
-_These scripts are still running, so we don't have all the values yet to make the graphs. Once we make the graphs it will be easier to compare sequences and their quality at different stages of processing.__
-
 ### Figures
 
 <img src="analysis/0_figures/2_coverage.png"  alt="Coverage Bar Graph">  
