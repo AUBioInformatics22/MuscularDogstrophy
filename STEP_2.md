@@ -2,7 +2,7 @@
 
 #### Discussion
 
-We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: `coverage.R`. A bar plot of percent mapped was produced using the script: `percent_mapped.R`.
+We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: `create_figures.R`. The same script was used to produce a bar plot of percent mapped.
 
 #### Trimming
 
@@ -39,14 +39,15 @@ __Table 1.__ Comparing coverage values. _The estimated raw X chromsome (chrX) co
 
 __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for each sample (values in Table 2).  
 
-| Sample ID | Percent Mapped |
-|:---------:|:--------------:|
-|   0001    |     87.05      |
-|   0002    |     88.57      |
-|   0005    |     86.89      |
-|   0006    |     87.55      |
 
-__Table 2.__ The percent mapped for the X chromosome for each sample.  
+| Sample ID | Whole Genome | X Chromosome |
+|:---------:|:------------:|:------------:|
+|   0001    |    74.81     |    87.05     |
+|   0002    |    76.41     |    88.57     |
+|   0005    |    74.32     |    86.89     |
+|   0006    |    75.05     |    87.55     |
+
+__Table 2.__ The percent mapped to the whole genome and X chromosome for each sample.  
 
 #### Contributions
 
