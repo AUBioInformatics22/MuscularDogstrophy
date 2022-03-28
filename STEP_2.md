@@ -2,7 +2,7 @@
 
 #### Discussion
 
-We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using samtools view. We used samtools flagstat and samtools depth to summarize the alignment quality of our sequences, and then generated a bar graph of coverage, including raw and aligned data using the script: `coverage.R`. The histogram of percent mapped was produced using the script: `percent_mapped.R`.
+We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: `coverage.R`. A bar plot of percent mapped was produced using the script: `percent_mapped.R`.
 
 #### Trimming
 
@@ -47,3 +47,10 @@ __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for eac
 |   0006    |     87.55      |
 
 __Table 2.__ The percent mapped for the X chromosome for each sample.  
+
+#### Contributions
+
+Jacqueline Barry: graphical analysis and discussion  
+Rebecca Nance: technical support and troubleshooting  
+Cassidy Schneider: ran alignment to reference genome and subset to X chromosome  
+Kyndall Skelton: indexed reference genome  
