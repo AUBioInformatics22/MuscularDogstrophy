@@ -20,7 +20,7 @@ For one sample (0001), we determined percent mapped for the whole genome before 
 
 <img src="analysis/0_figures/2_coverage.png"  alt="Coverage Bar Graph">  
 
-__Figure 2.__ A bar plot showing coverage for each sample at different stages of processing (values in Table 2).  
+__Figure 1.__ A bar plot showing coverage for each sample at different stages of processing (values in Table 2).  
 
 <br>
 
@@ -31,13 +31,13 @@ __Figure 2.__ A bar plot showing coverage for each sample at different stages of
 |   0005    |      17.964      |       15.0552        |
 |   0006    |      22.089      |       18.4987        |
 
-__Table 2.__ Comparing coverage values. _The estimated raw X chromsome (chrX) coverage was calculated for each sample by multiplying the whole genome raw coverage value by 0.04705._  
+__Table 1.__ Comparing coverage values. _The estimated raw X chromsome (chrX) coverage was calculated for each sample by multiplying the whole genome raw coverage value by 0.04705._  
 
 <br><br>
   
 <img src="analysis/0_figures/percent_mapped.png"  alt="Percent Mapped Histogram">
 
-__Figure 3.__ A bar plot showing the percent mapped for the X chromosome for each sample (values in Table 2).  
+__Figure 2.__ A bar plot showing the percent mapped for the X chromosome for each sample (values in Table 2).  
 
 | Sample ID | Percent Mapped |
 |:---------:|:--------------:|
@@ -46,4 +46,4 @@ __Figure 3.__ A bar plot showing the percent mapped for the X chromosome for eac
 |   0005    |     86.89      |
 |   0006    |     87.55      |
 
-__Table 3.__ The percent mapped for the X chromosome for each sample.  
+__Table 2.__ The percent mapped for the X chromosome for each sample.  
