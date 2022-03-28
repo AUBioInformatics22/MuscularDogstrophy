@@ -45,6 +45,6 @@ __Table 2.__ Per base quality assessment reports by sample (from FastQC).
 ### Contributions
 
 Jacqueline Barry: graphical analysis and discussion  
-Rebecca Nance: command line FastQC  
+Rebecca Nance: uploaded raw data to the Alabama Super Computer and ran FastQC on the command line 
 Cassidy Schneider: graphical analysis and discussion  
 Kyndall Skelton: graphical analysis and discussion  
