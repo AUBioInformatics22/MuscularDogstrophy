@@ -19,6 +19,8 @@ pm_legend_text <- c("Whole Genome",
                     "X Chromosome")
 
 max_value <- max(metrics_data[c("raw", "est_raw_chrX", "aligned_chrX",
+                                "marked_chrX")], na.rm = TRUE)
+max_value_all <- max(metrics_data[c("raw", "est_raw_chrX", "aligned_chrX",
                                 "marked_chrX", "variant_chrX")], na.rm = TRUE)
 
 
@@ -78,7 +80,7 @@ barplot(
   ylab = "Coverage",
   main = "Raw Whole Genome Coverage",
   col = viridis(5)[4])
-text(x = label_coords1, y = metrics_data$raw + 2, labels = metrics_data$raw)
+text(x = label_coords1, y = metrics_data$raw + 1.5, labels = metrics_data$raw)
 dev.off()
 
 #png(filename="analysis/0_figures/1_coverage_all.png", width = 500, height = 300)
@@ -111,11 +113,12 @@ barplot(cbind(raw, aligned_chrX) ~ id,
 legend("topright", inset = c(0,-0.1), legend = legend_text[c(1,3)],
        cex = 0.8, fill = viridis(5)[4:2], bty = "n", xpd = TRUE)
 text(x = t(label_coords2), y = cbind(metrics_data$raw,
-                                     metrics_data$aligned_chrX) + 2,
+                                     metrics_data$aligned_chrX) + 1.5,
      labels = cbind(round(metrics_data$raw, digits = 3),
                     round(metrics_data$aligned_chrX,  digits = 3)), cex = 0.8)
 dev.off()
 
+## RAW VS ALIGNED VS MARKED
 png(filename="analysis/0_figures/3_coverage.png", width = 700, height = 400)
 barplot(cbind(raw, aligned_chrX, marked_chrX) ~ id,
         data = metrics_data,
@@ -124,7 +127,7 @@ barplot(cbind(raw, aligned_chrX, marked_chrX) ~ id,
         ylim = c(0,max_value*1.3),
         xlab = "Sequence",
         ylab = "Coverage",
-        main = "Raw vs. Aligned Coverage",
+        main = "Coverage at Different Stages of Processing",
         legend.text = FALSE,
         #args.legend = ,
         col = viridis(5)[4:2])
@@ -132,7 +135,7 @@ legend("topright", inset = c(0,-0.1), legend = legend_text[c(1,3,4)], cex = 0.8,
        fill = viridis(5)[4:2], bty = "n", xpd = TRUE)
 text(x = t(label_coords3), y = cbind(metrics_data$raw,
                                      metrics_data$aligned_chrX,
-                                     metrics_data$marked_chrX) + 2,
+                                     metrics_data$marked_chrX) + 1.5,
      labels = cbind(round(metrics_data$raw, digits = 2),
                     round(metrics_data$aligned_chrX,  digits = 2),
                     round(metrics_data$marked_chrX, digits = 2)), cex = 0.8)
@@ -143,10 +146,10 @@ barplot(cbind(raw, aligned_chrX, marked_chrX, variant_chrX) ~ id,
         data = metrics_data,
         space = c(0,0.5),
         beside = TRUE,
-        ylim = c(0,max_value*1.3),
+        ylim = c(0,max_value_all*1.3),
         xlab = "Sequence",
         ylab = "Coverage",
-        main = "Raw vs. Aligned Coverage",
+        main = "Coverage at Different Stages of Processing",
         legend.text = FALSE,
         #args.legend = ,
         col = viridis(5)[4:1])
@@ -171,11 +174,13 @@ barplot(cbind(percent_mapped_wg, percent_mapped_chrX) ~ id,
         space = c(0,0.5),
         beside = TRUE,
         ylim = c(60,102),
-        main = "Percent of Sequences Mapped in Samples",
+        main = "Percent of Sequences Mapped by Sample",
         xlab = "Sequence",
         ylab = "Percent Mapped",
         xpd = FALSE,
-        col = magma(8)[c(4,6)])
+        col = magma(7)[c(5,6)])
+legend("topright", inset = c(0,-0.1), legend = pm_legend_text[c(1:2)], cex = 0.8,
+       fill = magma(7)[c(5,6)], bty = "n", xpd = TRUE)
 text(x = t(label_coords2), y = cbind(metrics_data$percent_mapped_wg,
                                  metrics_data$percent_mapped_chrX) + 2,
      labels = cbind(metrics_data$percent_mapped_wg,
@@ -191,7 +196,7 @@ barplot(percent_duplicates ~ id,
         main = "Percent Duplicates by Sample",
         xlab = "Sequence",
         ylab = "Percent Duplicates",
-        col = magma(8)[7])
+        col = magma(8)[5])
 text(x = label_coords1, y = metrics_data$percent_duplicates + 1,
      labels = metrics_data$percent_duplicates, cex = 0.8)
 dev.off()
