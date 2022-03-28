@@ -22,3 +22,9 @@ Percent Duplication:
 
 Screenshot Highlights:
 _pictures here_
+
+#### Contributions
+Jacqueline Barry:
+Rebecca Nance:
+Cassidy Schnieder:
+Kyndall skelton:
