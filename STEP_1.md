@@ -1,12 +1,9 @@
 ## Step 1: Initial Quality Assessment of Raw NGS Data
 
-### Move forward or continue filtering?
+### Discussion
 
-__UPDATE THIS!!__ Based on the results, our group agrees that filtering to exclude poor quality reads would be appropriate. We agree that trimming of the last 10 bp should be performed for all samples due to poor quality as evidenced by Phred scores below 20.  Additional trimming may need to be performed on individual samples.  
+The goal of this step was to determine the overall quality of our raw sequencing data. We used the command line tool `FastQC` on the Alabama Supercomputer to generate quality assessment reports (see Table 2). Given that the per base sequence quality of our data is relatively high (above 30 for all samples), our group has decided not to filter our reads. The whole genome coverage of sequences, as depicted in Figure 1 and Table 1, was calculated using `(number of reads x read length)/genome size`.
 
-__TODO!!__ Pick representative graphs from the selection. Add discussion about quality and selected graphs.  
-
-<br>
 
 ### Graphical Analysis
 
@@ -16,6 +13,8 @@ __TODO!!__ Pick representative graphs from the selection. Add discussion about q
 
 __Figure 1.__ A bar graph showing coverage for each sample at different stages of processing (values in Table 1).  
 
+<br>
+
 | Sample ID | Raw Whole Genome |
 |:---------:|:----------------:|
 |   0001    |      23.701      |
@@ -23,7 +22,7 @@ __Figure 1.__ A bar graph showing coverage for each sample at different stages o
 |   0005    |      17.964      |
 |   0006    |      22.089      |
 
-__Table 1.__ Calculated coverage of the raw data for the whole genome by sequence.  
+__Table 1.__ Calculated coverage of the raw data for the whole genome by sample.  
 
 <br>
 
@@ -38,3 +37,14 @@ __Table 1.__ Calculated coverage of the raw data for the whole genome by sequenc
 |Per base sequence quality|<img src="analysis/1_fastqc_reports/0005_1_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Foward Reads from Sample 0005">|<img src="analysis/1_fastqc_reports/0005_2_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Reverse Reads from Sample 0005">|
 | __Sample 0006__ |  __Forward__ | __Reverse__ |
 |Per base sequence quality|<img src="analysis/1_fastqc_reports/0006_1_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Foward Reads from Sample 0006">|<img src="analysis/1_fastqc_reports/0006_2_fastqc/Images/per_base_quality.png"  alt="Per Base Quality of Reverse Reads from Sample 0006">|
+
+__Table 2.__ Per base quality assessment reports by sample (from FastQC). 
+
+<br>
+
+### Contributions
+
+Jacqueline Barry: graphical analysis and discussion
+Rebecca Nance: command line FastQC
+Cassidy Schneider: graphical analysis and discussion
+Kyndall Skelton: graphical analysis and discussion
