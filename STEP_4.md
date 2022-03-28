@@ -10,6 +10,8 @@
 
 ### Discussion
 
+Step 4 has been completed we are currently figuring out the best way to present the data and if the filtering was done correctly.
+
 #### Comparing to FastQC of raw data
 
 How did the quality of your file change from Step 1 when you did the FastQC?
