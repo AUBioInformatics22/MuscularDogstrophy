@@ -50,7 +50,7 @@ __Table 2.__ The percent mapped for the X chromosome for each sample.
 
 #### Contributions
 
-Jacqueline Barry: graphical analysis and discussion
-Rebecca Nance: technical support and troubleshooting
-Cassidy Schneider: ran alignment to reference genome and subset to X chromosome
-Kyndall Skelton: indexed reference genome
+Jacqueline Barry: graphical analysis and discussion  
+Rebecca Nance: technical support and troubleshooting  
+Cassidy Schneider: ran alignment to reference genome and subset to X chromosome  
+Kyndall Skelton: indexed reference genome  
