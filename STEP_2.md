@@ -47,3 +47,10 @@ __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for eac
 |   0006    |     87.55      |
 
 __Table 2.__ The percent mapped for the X chromosome for each sample.  
+
+#### Contributions
+
+Jacqueline Barry: graphical analysis and discussion
+Rebecca Nance: technical support and troubleshooting
+Cassidy Schneider: ran alignment to reference genome and subset to X chromosome
+Kyndall Skelton: indexed reference genome
