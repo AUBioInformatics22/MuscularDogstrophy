@@ -20,7 +20,7 @@ For one sample (0001), we determined percent mapped for the whole genome before 
 
 <img src="analysis/0_figures/2_coverage.png"  alt="Coverage Bar Graph">  
 
-__Figure 1.__ A bar plot showing coverage for each sample at different stages of processing (values in Table 2).  
+__Figure 1.__ A bar plot showing coverage for each sample at different stages of processing (values in Table 1).  
 
 <br>
 
