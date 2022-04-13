@@ -2,7 +2,7 @@
 
 ### Discussion
 
-The goal of this step was to determine the overall quality of our raw sequencing data. To increase the efficiency of our analyses, we reduced our sample size to 4 individuals: 2 affected males (0001, 0002) and 2 carrier females (0005, 0006). We used the command line tool `FastQC` on the Alabama Supercomputer to generate quality assessment reports (see Table 2). Given that the per base sequence quality of our data is relatively high (above 30 for all samples), our group has decided not to filter our reads and only trim the adapters. The whole genome coverage of sequences, as depicted in Figure 1 and Table 1, was calculated using `(number of reads x read length)/genome size`.
+The goal of this step was to determine the overall quality of our raw sequencing data. To increase the efficiency of our analyses, we reduced our sample size to 4 individuals: 2 affected males (0001, 0002) and 2 carrier females (0005, 0006). We used the command line tool `FastQC` on the Alabama Supercomputer to generate quality assessment reports (see Table 2). Given that the per base sequence quality of our data is relatively high (above 30 for all samples), our group has decided not to trim our data. The whole genome coverage of sequences, as depicted in Figure 1 and Table 1, was calculated using `(number of reads x read length)/genome size`.
 
 
 ### Graphical Analysis
@@ -43,7 +43,7 @@ __Table 2.__ Per base quality assessment reports by sample (from FastQC).
 <br>
 
 
-#### FastQC Graphs of Trimmed Data
+
 
 
 
@@ -52,6 +52,6 @@ __Table 2.__ Per base quality assessment reports by sample (from FastQC).
 ### Contributions
 
 Jacqueline Barry: graphical analysis and discussion  
-Rebecca Nance: uploaded raw data to the Alabama Super Computer and ran FastQC on the command line 
+Rebecca Nance: uploaded raw data to the Alabama Super Computer, ran FastQC on the command line 
 Cassidy Schneider: graphical analysis and discussion  
 Kyndall Skelton: graphical analysis and discussion  
