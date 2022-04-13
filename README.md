@@ -11,12 +11,9 @@ Genomic DNA was isolated from 4 affected males and 4 carrier females from the Sp
 | --- | --- | --- | --- |
 | Buddy | Affected Male | SL522590 | 0001
 | Dandelion | Affected Male | SL522591 | 0002
-| Snapdragon | Affected Male | SL522592 | 0003
-| Winston | Affected Male | SL522593 | 0004
 | Camelia | Carrier Female | SL522594 | 0005
 | Dottie | Carrier Female | SL522595 | 0006
-| Iris | Carrier Female | SL522596 | 0007
-| Ruby | Carrier Female | SL522597 | 0008 
+
 
 <br>
 
