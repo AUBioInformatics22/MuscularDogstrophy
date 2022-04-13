@@ -8,7 +8,7 @@ The script `5_variants.sh` was used to perform variant calling, utilizing `GATK 
 
 ### Discussion
 
-Step 4 has been completed we are currently figuring out the best way to present the data and if the filtering was done correctly before answering the questions outlined below.
+
 
 #### Comparing to FastQC of raw data
 
