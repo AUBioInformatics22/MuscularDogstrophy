@@ -18,7 +18,7 @@ We plan to compare the resulting statistical analysis and summary of the dataset
 
 __Figure 1.__ A bar graph showing coverage for each sample at different stages of processing (values in Table 1).
 
-| Sample ID | Raw Whole Genome | Aligned Chromosome X | Marked Chromosome X | Variants Chromosome X SNPs  | Variants Chromosome X Indels|
+| Sample ID | Raw Whole Genome | Aligned Chromosome X | Marked Chromosome X |Variants Chromosome X SNPs   | Variants Chromosome X Indels|
 |:---------:|:----------------:|:--------------------:|:-------------------:|:---------------------------:| :--------------------------:|
 |   0001    |      23.701      |       11.3141        |       10.2846       |           29.5533           |            24.6290          |
 |   0002    |      23.454      |       11.2097        |       10.1347       |           29.5656           |            25.1147          |
