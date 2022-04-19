@@ -44,9 +44,17 @@ __Table 2.__ Percent of duplicate reads.
 #### IGV
 
 Screenshot Highlights:
+
+_Sequence 0001_
 <img src="analysis/3_duplicates/0001_markdup.png">
+
+_Sequence 0002_
 <img src="analysis/3_duplicates/0002_markdup.png">
+
+_Sequence 0005_
 <img src="analysis/3_duplicates/0005_markdup.png">
+
+_Sequence 0006_
 <img src="analysis/3_duplicates/0006_markdup.png">
 
 #### Contributions
