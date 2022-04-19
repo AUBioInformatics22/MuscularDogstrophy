@@ -26,7 +26,7 @@ Genomic DNA was isolated from 4 affected males and 4 carrier females from the Sp
 #### [Step 2 Report: Alignment of sequencing reads to reference genome](STEP_2.md)
 #### [Step 3 Report: Post-alignment processing](STEP_3.md)
 #### [Step 4 Report: Variant calling](STEP_4.md)
-
+#### [Data Analysis](Data_Analysis.md)
 <br>
 
 ## Practice Data Reports
