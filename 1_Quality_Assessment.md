@@ -1,4 +1,4 @@
-## Step 1: Adapter Trimming & Quality Assessment 
+## Step 1: Raw Quality Assessment 
 
 ### Discussion
 
