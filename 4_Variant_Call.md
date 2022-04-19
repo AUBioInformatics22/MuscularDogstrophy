@@ -10,10 +10,7 @@ The coverages from Step 1 were calculated for the Raw Whole Genome. When compari
 
 #### Statistical analysis
 
-Compare the resulting statistical analysis and summary of the datasets within your group. As before, you should include in your report an in depth summary of your data and comment on various quality aspects of your VCF files. You may use screen shots of IGV to show examples of regions where a SNP is considered high quality versus low quality.
-
-While you should likely use all of these tools for each of your individual VCF files, I do not want a long report with each of these summaries. Instead, you should choose the approach that best displays the information you want to convey. Please only include the highlights and important differences between specific sets of sequences in your group report. 
-
+We plan to compare the resulting statistical analysis and summary of the datasets. We will include an in depth summary of our data with comments on various quality aspects of our VCF files. We plan to use IGV to show examples of regions where a SNP is considered high quality versus low quality. Our pipeline has generated a high volume of SNP’s and we are in the process of determining those that are of high quality before isolating the area of interest for our final data analysis.
 
 ### Figures
 
