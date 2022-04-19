@@ -22,10 +22,10 @@ Genomic DNA was isolated from 4 affected males and 4 carrier females from the Sp
 
 ## Reports
 
-#### [Step 1 Report: Initial quality assessment of raw NGS data](STEP_1.md)
-#### [Step 2 Report: Alignment of sequencing reads to reference genome](STEP_2.md)
-#### [Step 3 Report: Post-alignment processing](STEP_3.md)
-#### [Step 4 Report: Variant calling](STEP_4.md)
+#### [Step 1 Report: Initial quality assessment of raw NGS data](1_Quality_Assessment.md)
+#### [Step 2 Report: Alignment of sequencing reads to reference genome](2_Alignment.md)
+#### [Step 3 Report: Post-alignment processing](3_Duplicates.md)
+#### [Step 4 Report: Variant calling](4_Variant_Call.md)
 #### [Data Analysis](Data_Analysis.md)
 <br>
 
