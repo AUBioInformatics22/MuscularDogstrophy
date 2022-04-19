@@ -41,7 +41,7 @@ __Table 2.__ Percent of duplicate reads.
 
 <br>
 
-#### IGV
+#### IGV Analysis
 
 Screenshot Highlights:
 
