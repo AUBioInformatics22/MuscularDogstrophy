@@ -1,11 +1,7 @@
 ## Step 3: Post-alignment processing
 
 #### Discussion:
-This step of the analysis picks up at the end of step 2. The output from the alignment script from Step 2 was run through the duplicate script: `4_duplicates.sh`, which sorted, indexed, and marked duplicates for the BAM files from each of our 4 samples. `samtools depth` was used to determine the overall coverage of the marked BAM files. These coverage values were compared to those calculated at previous processing steps (Figure 1). The percent of sequences that are duplicates was determined using `samtools flagstat` (Figure 2). The plots were generated in `RStudio` using the script: `create_figures.R`. The `dup_metrics.sh` script was used to determine the preceding metrics. 
-
-3. IGV Genome Viewer:
-a. Take screen shots from IGV of before and after to show quality improvement during Step 3 for each individual BAM file. b. Select screenshots that best display the information of sample improvement, highlights, and important differences between specific sets of sequences.
-
+This step of the analysis picks up at the end of step 2. The output from the alignment script from Step 2 was run through the duplicate script: `4_duplicates.sh`, which sorted, indexed, and marked duplicates for the BAM files from each of our 4 samples. `samtools depth` was used to determine the overall coverage of the marked BAM files. These coverage values were compared to those calculated at previous processing steps (Figure 1). The percent of sequences that are duplicates was determined using `samtools flagstat` (Figure 2). The plots were generated in `RStudio` using the script: `create_figures.R`. The `dup_metrics.sh` script was used to determine the preceding metrics. We used Intergrated Genome Viewer (IGV) to visually inspect our sequences.
 
 ### Figures
 
@@ -41,9 +37,7 @@ __Table 2.__ Percent of duplicate reads.
 
 <br>
 
-#### IGV Analysis
-
-Screenshot Highlights:
+#### IGV Analysis Highlights
 
 _Sequence 0001_
 
