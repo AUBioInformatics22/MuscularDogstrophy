@@ -47,7 +47,7 @@ Screenshot Highlights:
 <img src="analysis/3_duplicates/0001_markdup.png">
 <img src="analysis/3_duplicates/0002_markdup.png">
 <img src="analysis/3_duplicates/0005_markdup.png">
-<img src="analysis/3_duplicates/0001_markdup.png">
+<img src="analysis/3_duplicates/0006_markdup.png">
 
 #### Contributions
 Jacqueline Barry: graphical analysis and discussion  
