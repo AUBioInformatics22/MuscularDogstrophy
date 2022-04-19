@@ -2,25 +2,11 @@
 
 ### Process
 
-The script `5_variants.sh` was used to perform variant calling, utilizing `GATK HaplotypeCaller`. The script also extracts only SNP variants using `GATK SelectVariants` and filters variants using `GATK VariantFiltration`. Coverage was determined for the resulting VCF files using `vcftools`. These coverage values were plotted alongside data from previous processing steps to facilitate comparison (Figure 1).  
-
-5. Compare VCF to BAM using IGV.
+The script `5_variants.sh` was used to perform variant calling, utilizing `GATK HaplotypeCaller`. The script also extracts only SNP variants using `GATK SelectVariants` and filters variants using `GATK VariantFiltration`. Coverage was determined for the resulting VCF files using `vcftools`. These coverage values were plotted alongside data from previous processing steps to facilitate comparison (Figure 1). The VCF files were compared to the BAM files using IGV.
 
 ### Discussion
 
-
-
-#### Comparing to FastQC of raw data
-
-How did the quality of your file change from Step 1 when you did the FastQC?
-
-#### Comparing to aligned BAM
-
-How did the coverage of your BAM file change from Step 2 when you first generated an alignment to VCFtools depth calculation?
-
-#### Comparing samples
-
-How do the coverage of the samples in my project compare?
+The coverages from Step 1 were calculated for the Raw Whole Genome. When comparing the coverages calculated for the Chromosome X Variants, the coverage is significantly greater. Compared to what was observed in the raw data coverage, the aligned chromosome coverage decreased, then was further decreased after marking duplicates. However, variant coverage increased significantly. Between samples, the first 2 samples (0001 and 0002) had coverages that were fairly equivalent. Sample 0005 had higher coverage, and Sample 0006 had the highest coverage (Table 1).
 
 #### Statistical analysis
 
@@ -47,6 +33,6 @@ __Table 1.__ Coverage values.
 #### Contributions
 
 Jacqueline Barry: graphical analysis and discussion  
-Rebecca Nance: IGV analysis  
-Cassidy Schnieder: gathered quality metrics  
-Kyndall Skelton: sorted, indexed, and marked duplicates  
+Rebecca Nance: command line data assessment/IGV assessment    
+Cassidy Schnieder: command line data assessment  
+Kyndall Skelton: graphical analysis and discussion  
