@@ -1,7 +1,7 @@
 ## Step 3: Post-alignment processing
 
 #### Discussion:
-This step of the analysis picks up at the end of step 2. The output from the alignment script from Step 2 was run through the duplicate script: `4_duplicates.sh`, which sorted, indexed, and marked duplicates for the BAM files from each of our 4 samples. `samtools depth` was used to determine the overall coverage of the marked BAM files. These coverage values were compared to those calculated at previous processing steps (Figure 1). The percent of sequences that are duplicates was determined using `samtools flagstat` (Figure 2). The plots were generated in `RStudio` using the script: `create_figures.R`. The `dup_metrics.sh` script was used to determine the preceding metrics. We used Intergrated Genome Viewer (IGV) to visually inspect our sequences.
+This step of the analysis picks up at the end of step 2. The output from the alignment script from Step 2 was run through the duplicate script: [3_duplicates.sh](scripts/3_duplicates.sh), which sorted, indexed, and marked duplicates for the BAM files from each of our 4 samples. `samtools depth` was used to determine the overall coverage of the marked BAM files. These coverage values were compared to those calculated at previous processing steps (Figure 1). The percent of sequences that are duplicates was determined using `samtools flagstat` (Figure 2). The plots were generated in `RStudio` using the script: [create_figures.R](scripts/create_figures.R). The [dup_metrics.sh](scripts/dup_metrics.sh) script was used to determine the preceding metrics. We used Intergrated Genome Viewer (IGV) to visually inspect our sequences.
 
 ### Figures
 
@@ -41,7 +41,8 @@ __Table 2.__ Percent of duplicate reads.
 
 <img src="analysis/0_figures/IGV_compare_dupl.png">
 
-__Figure 3.__ Screenshot of IGV comparing coverage before and after marking duplicates for each sample. 
+__Figure 3.__ Screenshot of IGV comparing coverage before and after marking duplicates for each sample.  
+
 <br>
 
 <img src="analysis/0_figures/good_vs_bad_coverage_IGV.png">
