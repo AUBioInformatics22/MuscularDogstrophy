@@ -2,7 +2,7 @@
 
 ### Discussion
 
-We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome (CanFam6) using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: `create_figures.R`. The same script was used to produce a bar plot of percent mapped.
+We first indexed our canine reference genome (canFam6) using bwa mem and the script: [0_index_genome.sh](scripts/0_index_genome). We then aligned the samples to the reference genome (CanFam6) using the script: [3_align_chrX.sh](scripts/3_align_chrX.sh). Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: [create_figures.R](scripts/create_figures.R). The same script was used to produce a bar plot of percent mapped.
   
 We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FASTQC' (see step 1).
   
@@ -33,7 +33,7 @@ __Table 1.__ Comparing coverage values. _The estimated raw X chromsome (chrX) co
 
 <br>
   
-<img src="analysis/0_figures/percent_mapped.png"  alt="Percent Mapped Histogram">
+<img src="analysis/0_figures/percent_mapped.png"  alt="Percent Mapped Bar Graph">
 
 __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for each sample (values in Table 2).  
 
@@ -50,7 +50,7 @@ __Table 2.__ The percent mapped to the whole genome and X chromosome for each sa
   
 <br>
 
-### Script Markdown: 3_align_chrX.sh 
+### Script Markdown: [3_align_chrX.sh ](scripts/3_align_chrX.sh)
 1.) use bwa mem to create sam (aligned sequence file)   
 `bwa mem -M -v 2 -t 8 -R "@RG\tID:$sample.$flowcell.$lane_id\tSM:$sample\tPU:$flowcell.$lane_id\tPL:Illumina\tLB:$flowcell.$lane_id" $ref $forward $reverse \   >${PROJDIR}/$sample.sam`
  
