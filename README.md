@@ -2,9 +2,10 @@
 ### Jacqueline Barry, Rebecca Nance, Cassidy Schneider, Kyndall Skelton
 
 
-## Overview
+## Introduction
+Muscular dystrophy is a term that includes many inherited diseases that affects muscle function. Duchenne Muscular Dystrophy (DMD), the most common subtype, occurs in both humans and dogs. This disease is characterized by a defect in the gene that encodes the protein dystrophin, which plays a critical role in muscle structure and function. Consequently, movement and mobility are impaired and affected individuals progressively become weaker. Eventually, the muscles in the heart and/or diaphragm are compromised, leading to premature death or euthanasia. The dystrophin gene is located on the X chromosome and therefore, obeys traditional X-chromosome inheritance pattern. Our lab maintains one of the few canine colonies for studying DMD in the dog. Breed-specific mutations have been identified in a few breeds, including Golden Retriever, Labrador Retriever, and Corgi, among others (1). However, the mutation responsible for DMD in the Springer Spaniel has yet to be elucidated. Previous attempts to identify the mutation using sequencing of cDNA from affected dogs yielded no conclusive mutation. To address this question, we used genomic sequencing data from 2 affected males and 2 carrier females from our Springer Spaniel colony. We aligned our sequences to the canine reference genome (`canFam6`) and specifically isolated the X chromosome from our sequences. We then marked any duplicates, calculated coverage, and identified SNPs that were hemizygous in the males and heterozygous in the females in the DMD gene. We manually inspected these variants and their location in the gene in order to identify the mutation responsible for DMD in the Springer Spaniel.
 
-Muscular dystrophy is a term that includes many inherited diseases that affects muscle function. Duchenne Muscular Dystrophy (DMD), the most common subtype, occurs in both humans and dogs. This disease is characterized by a defect in the gene that encodes the protein dystrophin, which plays a critical role in muscle structure and function. Consequently, movement and mobility are impaired and affected individuals progressively become weaker. Eventually, the muscles in the heart and/or diaphragm are compromised, leading to premature death or euthanasia. The dystrophin gene is located on the X chromosome and therefore, obeys traditional X-chromosome inheritance pattern. Our lab maintains one of the few canine colonies for studying DMD. Breed-specific mutations have been identified in a few breeds, including Golden Retriever, Labrador Retriever, and Corgi. However, the mutation responsible for DMD in the Springer Spaniel has yet to be elucidated. Previous attempts to identify the mutation using sequencing of cDNA from affected dogs yielded no conclusive mutation. To address this question, we used genomic sequencing data from 2 affected males and 2 carrier females from our Springer Spaniel colony. We aligned our sequences to a canine reference genome `canFam6` and specifically isolated the X chromosome from our sequences. We then marked any duplicates, calculated coverages, and searched for variants at the DMD gene on the X chromosome in order to attempt to identify the mutation associated with muscular dystrophy in canines.
+## Bioinformatic Pipeline
 
 
 ## Samples
@@ -19,8 +20,6 @@ Genomic DNA was isolated from 4 affected males and 4 carrier females from the Sp
 
 __Table 1.__ Data description and coverage values throughout processing. 
 
-
-
 ### Figures
 
 <img src="analysis/0_figures/3_coverage.png"  alt="Coverage of Sequences">
@@ -28,6 +27,12 @@ __Table 1.__ Data description and coverage values throughout processing.
 __Figure 1.__ Bar plot of coverage across several stages of processing (values in Table 1).
 
 
+
+## Results  
+
+
+## Conclusion
+  
 <br>
 
 ## Reports
@@ -42,8 +47,9 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 ## Practice Data Reports
 
 Before the sequencing data was received, example data was used to develop the pipeline.
-
 #### [Step 1 Practice Report: Initial quality assessment of raw NGS data](practice_reports/STEP_1.md)
 #### [Step 2 Practice Report: Alignment of sequencing reads to reference genome](practice_reports/STEP_2.md)
 
-## Conclusion
+## References
+1. Kornegay, J.N., Bogan, J.R., Bogan, D.J. et al. Canine models of Duchenne muscular dystrophy and their use in therapeutic strategies. Mamm Genome 23, 85–108 (2012). https://doi.org/10.1007/s00335-011-9382-y  
+2.
