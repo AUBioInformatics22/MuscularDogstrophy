@@ -4,19 +4,14 @@
 if [ $# != 1 ]; then echo "$0: Usage: Please include a sample ID."; exit; fi
 ########################
 
-#configure environment to run GATK
-#module load anaconda (run this in the command line)
-#conda init bash (run this in the command line)
-
 ##### MODULES #####
 source /opt/asn/etc/asn-bash-profiles-special/modules.sh
 module load gatk/4.1.0.0
-source activate gatk
 ###################
 
 ##### DIRECTORIES #####
 PROJDIR="/home/shared/stevison_group2"
-DATADIR="${PROJDIR}/data/bwa"
+DATADIR="${PROJDIR}/data/chrX_bam"
 INDEXDIR="${PROJDIR}/analysis/0_index_genome"
 OUTDIR="${PROJDIR}/analysis/4_duplicates"
 #######################
@@ -44,6 +39,3 @@ fi
 #GATK command line
 gatk --java-options "-Xmx1G" BuildBamIndex -I $sample -R $reference
 gatk --java-options "-Xmx1G" MarkDuplicates -R $reference -I $sample -M "${output_prefix}.dup_metrics" -O "${output_prefix}.markedup.bam"
-
-#Deactivate GATK
-source deactivate GATK
