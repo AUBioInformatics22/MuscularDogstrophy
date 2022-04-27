@@ -1,5 +1,9 @@
-## Data Analysis
+## Step 5: Data Analysis
 
 ### Overview
-The SNP vcf files were loaded into IGV along with the CanFam6 reference genome to visually inspect the SNPs in the DMD gene on the X chromosome. 
+The annotated reference file (canFam6.chrX.json) was loaded into IGV along with the VCF file containing the SNPs of interest (all_samples_SNPs.vcf.gz). 
+    
+### Conclusions
+  
 
+### Future Directions  
