@@ -6,7 +6,7 @@ The goal of this step was to determine the overall quality of our raw sequencing
 
 ### Methods
 
-**[1_quality.sh](1_quality.sh):** uses the command line tool `FastQC` to generate quality assessment reports (see Table 2).
+**[1_quality.sh](scripts/1_quality.sh):** uses the command line tool `FastQC` to generate quality assessment reports (see Table 2).
 
 ### Results  
 
