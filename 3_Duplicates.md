@@ -39,21 +39,10 @@ __Table 2.__ Percent of duplicate reads.
 
 #### IGV Analysis Highlights
 
-_Sequence 0001_
+<img src="analysis/0_figures/IGV_compare_dupl.png">
 
-<img src="analysis/3_duplicates/0001_markdup.png">
-
-_Sequence 0002_
-
-<img src="analysis/3_duplicates/0002_markdup.png">
-
-_Sequence 0005_
-
-<img src="analysis/3_duplicates/0005_markdup.png">
-
-_Sequence 0006_
-
-<img src="analysis/3_duplicates/0006_markdup.png">
+__Figure 3.__ Screenshot of IGV comparing coverage before and after marking duplicates for each sample. 
+<br>
 
 #### Contributions
 Jacqueline Barry: graphical analysis and discussion  
