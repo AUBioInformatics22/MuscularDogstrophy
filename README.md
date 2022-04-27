@@ -1,4 +1,5 @@
 # Muscular Dogstrophy
+_Identifying the Mutation Responsible for Duchenne Muscular Dystrophy in the Springer Spaniel_
 ### Jacqueline Barry, Rebecca Nance, Cassidy Schneider, Kyndall Skelton
   <img src="analysis/0_figures/cover_photo_dog.jpg">
 
