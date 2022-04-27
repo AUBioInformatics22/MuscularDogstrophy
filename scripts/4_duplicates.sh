@@ -23,9 +23,10 @@ output_prefix="${DATADIR}/${sample_id}.sorted"
 reference="${INDEXDIR}/canFam6.masked.fa"
 #####################
 
-#check for files
+#check for bam file
 if [ ! -e "${sample}" ]; then echo -e "[4_duplicates]\t$sample does not exist."; exit; fi
 
+#check for reference
 if [ ! -e "${reference}" ]; then
   if [ -e "${reference}.gz" ]; then
     echo -e "[4_duplicates]\tReference is gzipped. Please unzip it and try again."
@@ -38,4 +39,4 @@ fi
 
 #GATK command line
 gatk --java-options "-Xmx1G" BuildBamIndex -I $sample -R $reference
-gatk --java-options "-Xmx1G" MarkDuplicates -R $reference -I $sample -M "${output_prefix}.dup_metrics" -O "${output_prefix}.markedup.bam"
+gatk --java-options "-Xmx1G" MarkDuplicates -R $reference -I $sample -M "${output_prefix}.dup_metrics" -O "${output_prefix}.markdup.bam"
