@@ -1,13 +1,11 @@
 ## Step 2: Alignment of sequencing reads to reference genome
 
-#### Discussion
+### Discussion
 
 We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome (CanFam6) using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: `create_figures.R`. The same script was used to produce a bar plot of percent mapped.
-
-#### Trimming
-
+  
 We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FASTQC' (see step 1).
-
+  
 #### Comparing raw coverage to aligned coverage
 
 There is a large difference in the raw coverage and aligned coverage values. The raw coverage was calculated for the whole genome, while the aligned coverage was calculated for just the X chromosome. _The X chromosome makes up approximately 4.705% of the genome. We can use this information to perform a rough estimate of the raw coverage of the X chromosome (Table 1). However, this estimate assumes equal coverage across the genome._  
@@ -33,12 +31,13 @@ __Figure 1.__ A bar plot showing coverage for each sample at different stages of
 
 __Table 1.__ Comparing coverage values. _The estimated raw X chromsome (chrX) coverage was calculated for each sample by multiplying the whole genome raw coverage value by 0.04705._  
 
-<br><br>
+<br>
   
 <img src="analysis/0_figures/percent_mapped.png"  alt="Percent Mapped Histogram">
 
 __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for each sample (values in Table 2).  
 
+<br>
 
 | Sample ID | Whole Genome | X Chromosome |
 |:---------:|:------------:|:------------:|
@@ -48,8 +47,10 @@ __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for eac
 |   0006    |    75.05     |    87.55     |
 
 __Table 2.__ The percent mapped to the whole genome and X chromosome for each sample.  
+  
+<br>
 
-#### Script Markdown: 3_align_chrX.sh 
+### Script Markdown: 3_align_chrX.sh 
 1.) use bwa mem to create sam (aligned sequence file)   
 `bwa mem -M -v 2 -t 8 -R "@RG\tID:$sample.$flowcell.$lane_id\tSM:$sample\tPU:$flowcell.$lane_id\tPL:Illumina\tLB:$flowcell.$lane_id" $ref $forward $reverse \   >${PROJDIR}/$sample.sam`
  
@@ -69,7 +70,7 @@ __Table 2.__ The percent mapped to the whole genome and X chromosome for each sa
 `samtools index ${sample}.chrX.sorted.bam`
 
 
-#### Contributions
+### Contributions
 
 Jacqueline Barry: graphical analysis and discussion  
 Rebecca Nance: technical support and troubleshooting  
