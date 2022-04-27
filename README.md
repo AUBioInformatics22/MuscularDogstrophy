@@ -36,4 +36,4 @@ Before the sequencing data was received, example data was used to develop the pi
 #### [Step 1 Practice Report: Initial quality assessment of raw NGS data](practice_reports/STEP_1.md)
 #### [Step 2 Practice Report: Alignment of sequencing reads to reference genome](practice_reports/STEP_2.md)
 
-##Conclusion
+## Conclusion
