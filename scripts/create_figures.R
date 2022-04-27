@@ -1,5 +1,10 @@
+### Generate plots and accompanying tables for metrics at various points in data processing.
+### Metrics include: coverage of raw whole genome, aligned chrX, chrX with duplicates marked,
+### SNPs, and INDELs; percent mapped; and percent duplicates.
+
 library(viridis)
 library(knitr)
+
 
 setwd("~/GitHub/MuscularDogstrophy")
 
