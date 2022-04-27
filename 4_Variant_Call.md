@@ -29,6 +29,14 @@ __Figure 1.__ A bar graph showing coverage for each sample at different stages o
 
 __Table 1.__ Coverage values.
 
+<br>
+
+<img src="analysis/0_figures/5_SNPs_DMD.png"  alt="SNPs in DMD Gene">  
+
+__Figure 2.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
+
+<br>
+
 #### Contributions
 
 Jacqueline Barry: graphical analysis and discussion  
