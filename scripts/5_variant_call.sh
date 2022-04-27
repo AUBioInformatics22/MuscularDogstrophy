@@ -1,8 +1,8 @@
 #!/bin/bash 
 
-###### CHECK USAGE #####
-#if [ $# != 1 ]; then echo "$0: Usage: Please include a sample ID."; exit; fi
-########################
+### Generate VCF files of SNPs and INDELs for each sample.
+### Perform hard filtering based on standard quality parameters.
+### Assess coverage.
 
 source /opt/asn/etc/asn-bash-profiles-special/modules.sh
 module load gatk/4.1.0.0
@@ -11,14 +11,9 @@ source activate gatk
 
 ##### DIRECTORIES #####
 PROJDIR="/home/shared/stevison_group2"
-#DATADIR="${PROJDIR}/data/fastq"
-#BAMDIR="${PROJDIR}/data/bam"
-#CHRXDIR="${PROJDIR}/data/chrX_bam"
 MARKDIR="${PROJDIR}/data/marked_chrX_bam"
 VCFDIR="${PROJDIR}/data/vcf"
 INDEXDIR="${PROJDIR}/analysis/0_index_genome"
-#ALIGNDIR="${PROJDIR}/analysis/3_alignment"
-#DUPDIR="${PROJDIR}/analysis/4_duplicates"
 VARDIR="${PROJDIR}/analysis/5_variant"
 SCRATCHDIR="/scratch/MD_data"
 #######################
@@ -26,10 +21,7 @@ SCRATCHDIR="/scratch/MD_data"
 mapfile -t male_samples < <(echo -e "0001\n0002")
 mapfile -t female_samples < <(echo -e "0005\n0006")
 mapfile -t sample_list < <(echo -e "0001\n0002\n0005\n0006")
-#sample="$1.chrX.sorted"
 ref="${INDEXDIR}/canFam6.masked.fa"
-
-#java -version
 
 #### COMMAND LINE FOR GATK BELOW ####
 
@@ -91,29 +83,37 @@ for samplenum in "${sample_list[@]}"; do
     --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \
     --output "$sample.SNPs.filtered.vcf"
 
-  gatk VariantFiltration -R "$ref" --variant "$sample.INDELs.vcf" \
-    --filter-expression "QD < 2.0" --filter-name "QD2" \
-    --filter-expression "QUAL < 30.0" --filter-name "QUAL30" \
-    --filter-expression "SOR > 3.0" --filter-name "SOR3" \
-    --filter-expression "FS > 60.0" --filter-name "FS60" \
-    --filter-expression "MQ < 40.0" --filter-name "MQ40" \
-    --filter-expression "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" \
-    --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \
-    --output "$sample.INDELs.filtered.vcf"
+#  gatk VariantFiltration -R "$ref" --variant "$sample.INDELs.vcf" \
+#    --filter-expression "QD < 2.0" --filter-name "QD2" \
+#    --filter-expression "QUAL < 30.0" --filter-name "QUAL30" \
+#    --filter-expression "SOR > 3.0" --filter-name "SOR3" \
+#    --filter-expression "FS > 60.0" --filter-name "FS60" \
+#    --filter-expression "MQ < 40.0" --filter-name "MQ40" \
+#    --filter-expression "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" \
+#    --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \
+#    --output "$sample.INDELs.filtered.vcf"
 
+  gatk VariantFiltration \
+    -R "$ref" \
+    -V "$sample.INDELs.vcf.gz" \
+    -filter "QD < 2.0" --filter-name "QD2" \
+    -filter "QUAL < 30.0" --filter-name "QUAL30" \
+    -filter "FS > 200.0" --filter-name "FS200" \
+    -filter "ReadPosRankSum < -20.0" --filter-name "ReadPosRankSum-20" \
+    -O "$sample.INDELs.filtered.vcf.gz"
 
   gzip "$sample.SNPs.vcf" "$sample.SNPs.filtered.vcf"
   gzip "$sample.INDELs.vcf" "$sample.INDELs.filtered.vcf"
 
   #get depth statistics
   module load vcftools
-  vcftools --gzvcf "$sample.SNPs.filtered.vcf.gz" --depth --out "$sample.SNPs" #output will be called $sample.idepth
-  vcftools --gzvcf "$sample.INDELSs.filtered.vcf.gz" --depth --out "$sample.INDELs" #output will be called $sample.idepth
+  vcftools --gzvcf "$sample.SNPs.filtered.vcf.gz" --depth --out "$sample.SNPs" #output will be called $sample.SNPs.idepth
+  vcftools --gzvcf "$sample.INDELSs.filtered.vcf.gz" --depth --out "$sample.INDELs" #output will be called $sample.INDELs.idepth
 
   #print QC metrics to a file
   snp_depth=$(awk 'NR>1 {print $3}' "$sample.SNPs.idepth")
   indel_depth=$(awk 'NR>1 {print $3}' "$sample.INDELs.idepth")
-
+  
   echo SNP depth for $sample is $snp_depth
   echo INDEL depth for $sample is $indel_depth
 done
