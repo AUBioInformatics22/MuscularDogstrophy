@@ -9,7 +9,9 @@ We first looked for SNPs that were present in exons on the DMD gene. Though we e
 
 <img src="analysis/0_figures/exon_mx.png"  alt="Exon SNP">
 <img src="analysis/0_figures/exon_mx_zoom.png" >
-__Figure 2.__ Screenshot of the SNP present within a DMD exon. 
+
+__Figure 2.__ Screenshot of the SNP present within a DMD exon.
+
     
 
 
