@@ -2,11 +2,11 @@
 
 #### Discussion
 
-We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is sex-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: `create_figures.R`. The same script was used to produce a bar plot of percent mapped.
+We first indexed our canine reference genome (canFam6) using bwa mem and the script: `0_index_genome.sh`. We then aligned the samples to the reference genome (CanFam6) using the script: `3_align_chrX.sh`. Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: `create_figures.R`. The same script was used to produce a bar plot of percent mapped.
 
 #### Trimming
 
-We decided not to trim our samples.
+We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FASTQC' (see step 1).
 
 #### Comparing raw coverage to aligned coverage
 
@@ -48,6 +48,26 @@ __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for eac
 |   0006    |    75.05     |    87.55     |
 
 __Table 2.__ The percent mapped to the whole genome and X chromosome for each sample.  
+
+#### Script Markdown: 3_align_chrX.sh 
+1.) use bwa mem to create sam (aligned sequence file)   
+`bwa mem -M -v 2 -t 8 -R "@RG\tID:$sample.$flowcell.$lane_id\tSM:$sample\tPU:$flowcell.$lane_id\tPL:Illumina\tLB:$flowcell.$lane_id" $ref $forward $reverse \   >${PROJDIR}/$sample.sam`
+ 
+2.) use samtools to convert sam to bam  
+`samtools view -Sb -@ 8 $sample.sam >$sample.bam`  
+  
+3.) use samtools to sort bam  
+`samtools sort -@ 8 -m 1500MB $sample.bam >$sample.sorted.bam`  
+  
+4.) use samtools to index the sorted bam  
+`samtools index $sample.sorted.bam`
+  
+5.) use samtools to extract the aligned chrX from the sorted bam  
+`samtools view -b -@ 8 $sample.sorted.bam chrX >"${CHRXDIR}/${sample}.chrX.sorted.bam"`  
+  
+6.) use samtools to index the chrX  
+`samtools index ${sample}.chrX.sorted.bam`
+
 
 #### Contributions
 
