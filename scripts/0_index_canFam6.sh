@@ -1,5 +1,7 @@
 #!/bin/sh
 
+### Index canFam6 using multiple tools.
+
 source /opt/asn/etc/asn-bash-profiles-special/modules.sh
 module load bwa/0.7.12
 module load samtools/1.2
