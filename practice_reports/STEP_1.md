@@ -62,3 +62,11 @@ __Per Base Sequence Quality__
 |SRR8541910|<img src="1_fastqc_reports/images/per_base_quality_SRR8541910_Galaxy.png" width="405" alt="Per Base Quality of SRR8541910 from Galaxy"><br>Forward |<img src="1_fastqc_reports/images/per_base_quality_SRR8541910_ASC.png" width="400" alt="Per Base Quality of SRR8541910 from ASC"><br>Forward and Reverse Concatenated|
 |SRR8541914|<img src="1_fastqc_reports/images/per_base_quality_SRR8541914_Galaxy.png" width="400" alt="Per Base Quality of SRR8541914 from Galaxy"><br>Forward |<img src="1_fastqc_reports/images/per_base_quality_SRR8541914_ASC.png" width="400" alt="Per Base Quality of SRR8541914 from ASC"><br>Forward and Reverse Concatenated|
 |SRR8541934|<img src="1_fastqc_reports/images/per_base_quality_SRR8541934_Galaxy.png" width="400" alt="Per Base Quality of SRR8541934 from Galaxy"><br>Forward |<img src="1_fastqc_reports/images/per_base_quality_SRR8541934_ASC.png" width="400" alt="Per Base Quality of SRR8541934 from ASC"><br>Forward and Reverse Concatenated|
+
+### Contributions
+
+Rebecca Nance: FastQC on the command line/Report  
+Cassidy Schneider: Downloaded sequence files onto the ASC/Report  
+Jacqueline Barry: Galaxy Analysis/Report  
+Kyndall Skelton: Galaxy Analysis/Report  
+Allison Sharp: Galaxysis Analysis/Report  
