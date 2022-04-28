@@ -1,5 +1,19 @@
 ## Step 2: Alignment of sequencing reads to reference genome
 
+### Discussion
+
+We first indexed our canine reference genome (canFam6) using bwa index and the script: [0_index_genome.sh](scripts/0_index_genome). We then aligned the samples to the reference genome (CanFam6) using the script: [2_align_chrX.sh](scripts/2_align_chrX.sh). Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: [create_figures.R](scripts/create_figures.R). The same script was used to produce a bar plot of percent mapped.
+
+We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FastQC' (see step 1).
+  
+#### Comparing raw coverage to aligned coverage
+
+There is a large difference in the raw coverage and aligned coverage values. The raw coverage was calculated for the whole genome, while the aligned coverage was calculated for just the X chromosome. _The X chromosome makes up approximately 4.705% of the genome. We can use this information to perform a rough estimate of the raw coverage of the X chromosome (Table 1). However, this estimate assumes equal coverage across the genome._  
+
+#### Different percent mapped for the whole genome and the X chromosome
+
+For one sample (0001), we determined percent mapped for the whole genome before extracting the sequences that mapped to the X chromosome. We then determined the percent mapped for just the X chromosome. For the whole genome, 74.81% mapped, and for the X chromosome, 87.05% mapped.
+
 ### Scripts
 
 - **[0_index_canFam6.sh](scripts/0_index_canFam6.sh):**
@@ -13,21 +27,6 @@
 - **[create_figures.R](scripts/create_figures.R):**
   - Generate a bar plot of coverage, including raw and aligned data.  
   - Generate a bar plot of percent mapped.  
-
-
-### Discussion
-
-We first indexed our canine reference genome (canFam6) using bwa index and the script: [0_index_genome.sh](scripts/0_index_genome). We then aligned the samples to the reference genome (CanFam6) using the script: [2_align_chrX.sh](scripts/2_align_chrX.sh). Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: [create_figures.R](scripts/create_figures.R). The same script was used to produce a bar plot of percent mapped.
-
-We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FASTQC' (see step 1).
-  
-#### Comparing raw coverage to aligned coverage
-
-There is a large difference in the raw coverage and aligned coverage values. The raw coverage was calculated for the whole genome, while the aligned coverage was calculated for just the X chromosome. _The X chromosome makes up approximately 4.705% of the genome. We can use this information to perform a rough estimate of the raw coverage of the X chromosome (Table 1). However, this estimate assumes equal coverage across the genome._  
-
-#### Different percent mapped for the whole genome and the X chromosome
-
-For one sample (0001), we determined percent mapped for the whole genome before extracting the sequences that mapped to the X chromosome. We then determined the percent mapped for just the X chromosome. For the whole genome, 74.81% mapped, and for the X chromosome, 87.05% mapped.
 
 ### Figures
 
