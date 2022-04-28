@@ -122,4 +122,4 @@ samtools flagstat ${sample}.chrX.sorted.bam \
 
 echo "all done!"
 
-### NOTE: after all sequences are done, run stat_csv.sh to create csv files for graphing in R. 
+### NOTE: stat_csv.sh uses the output files to create CSV metrics files. 
