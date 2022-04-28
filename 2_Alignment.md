@@ -1,9 +1,26 @@
 ## Step 2: Alignment of sequencing reads to reference genome
 
+### Scripts
+
+- **[0_index_canFam6.sh](scripts/0_index_canFam6.sh):**
+  - Index the canine reference genome (canFam6) using `bwa index`.
+  - Index canFam6 using `samtools faidx`.
+  - Index canFam6 using `picard CreateSequenceDictionary`.
+
+- **[2_align_chrX.sh](scripts/2_align_chrX.sh):**
+  - Align the samples to the reference genome (canFam6).  
+  - Subset the X chromosome using `samtools view`.  
+  - Summarize the alignment quality of sequences using `samtools flagstat` and `samtools depth`.  
+
+- **[create_figures.R](scripts/create_figures.R):**
+  - Generate a bar plot of coverage, including raw and aligned data.  
+  - Generate a bar plot of percent mapped.  
+
+
 ### Discussion
 
-We first indexed our canine reference genome (canFam6) using bwa mem and the script: [0_index_genome.sh](scripts/0_index_genome). We then aligned the samples to the reference genome (CanFam6) using the script: [2_align_chrX.sh](scripts/2_align_chrX.sh). Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: [create_figures.R](scripts/create_figures.R). The same script was used to produce a bar plot of percent mapped.
-  
+We first indexed our canine reference genome (canFam6) using bwa index and the script: [0_index_genome.sh](scripts/0_index_genome). We then aligned the samples to the reference genome (CanFam6) using the script: [2_align_chrX.sh](scripts/2_align_chrX.sh). Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: [create_figures.R](scripts/create_figures.R). The same script was used to produce a bar plot of percent mapped.
+
 We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FASTQC' (see step 1).
   
 #### Comparing raw coverage to aligned coverage
@@ -74,5 +91,5 @@ __Table 2.__ The percent mapped to the whole genome and X chromosome for each sa
 
 Jacqueline Barry: graphical analysis and discussion  
 Rebecca Nance: technical support and troubleshooting  
-Cassidy Schneider: ran alignment to reference genome and subset to X chromosome  
+Cassidy Schneider: aligned to reference genome and subset to X chromosome  
 Kyndall Skelton: indexed reference genome  
