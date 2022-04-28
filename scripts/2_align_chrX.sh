@@ -122,4 +122,4 @@ samtools flagstat ${sample}.chrX.sorted.bam \
 
 echo "all done!"
 
-### NOTE: stat_csv.sh uses the output files to create CSV metrics files. 
+### NOTE: stat_csv.sh uses the .txt output files from samtools depth and flagstat to create CSV metrics files. 
