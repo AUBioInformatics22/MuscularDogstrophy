@@ -5,7 +5,6 @@
 library(viridis)
 library(knitr)
 
-
 setwd("~/GitHub/MuscularDogstrophy")
 
 # load data from csv (generated from stat_csv.sh)
