@@ -35,7 +35,9 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 
 
 ## Conclusion
-  
+
+We first looked for SNPs that were present in exons on the DMD gene. On the command line, the script `var_metrics.sh` was used to determine that there was an enomourous amount of SNPs. Most of these SNPs were located within introns/non-coding regions. Though we expected to find none, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon. This SNP was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. These results suggest that this particular SNP could be the DMD-causing mutation in the Springer Spaniel, though more work is needed to validate these claims.
+
 <br>
 
 ## Reports
