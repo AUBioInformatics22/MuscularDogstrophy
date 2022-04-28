@@ -7,7 +7,7 @@ module load picard/1.79
 
 
 #path variables
-path="/scratch/MDPracticeData/analysis/1_index_genome/"
+path="/home/shared/stevison_group2/analysis/0_index_genome"
 
 cd ${path}/
 
