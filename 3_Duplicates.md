@@ -7,7 +7,7 @@
 - **[dup_metrics.sh](scripts/dup_metrics.sh):**
   - Determine coverage of the marked BAM files using `samtools depth`.
   - Get metrics using `samtools flagstat`.
-  - Note: percent duplicates is calculated in the script: [stat_csv.sh](scriptsstat_csv.sh) from the metrics file output by `3_duplicates.sh`.
+  - Note: percent duplicates is calculated in the script: [stat_csv.sh](scripts/stat_csv.sh) from the metrics file output by `3_duplicates.sh`.
 - **[create_figures.R](scripts/create_figures.R):**
   - Generate a bar plot of coverage, including raw, aligned, and marked data.
   - Generate a bar plot of percent duplicates.
