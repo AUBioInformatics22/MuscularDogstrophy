@@ -49,13 +49,10 @@ __Table 1.__ Calculated coverage of the raw data for the whole genome by sample.
 
 __Table 2.__ Per base quality assessment reports by sample (from FastQC). 
 
-<br>
+#### Side Note
+Galaxy was run on data that was of public domain. Our group did an analysis in galaxy comparing FastQC in galaxy versus FastQC on the command line. These comparisons can be found linked below as well as on the main README page. This analysis helped us decide to move forward doing FastQC on the command line only for the data used within this project.
 
-
-
-
-
-
+#### [Step 1 Practice Report: Initial quality assessment of raw NGS data](practice_reports/STEP_1.md)
 
 
 ### Contributions
