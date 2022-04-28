@@ -54,7 +54,7 @@ __Table 2.__ Percent of duplicate reads.
 
 <img src="analysis/0_figures/IGV_compare_dupl.png">
 
-__Figure 3.__ Screenshot of IGV comparing coverage before and after marking duplicates for each sample.  
+__Figure 3.__ Screenshot of IGV comparing coverage before and after marking duplicates for each sample. Analysis in IGV showed no significant difference after marking duplicates.   
 
 <br>
 
