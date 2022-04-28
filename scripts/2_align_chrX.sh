@@ -87,6 +87,16 @@ samtools sort -@ 8 -m 1500MB $sample.bam >$sample.sorted.bam
 echo $(date +%F%t%T) "Running samtools index on sorted bam..."
 samtools index $sample.sorted.bam
 
+#collect QC metrics of aligned whole genome
+#echo $(date +%F%t%T) "Running samtools depth for whole genome..."
+#samtools depth -a ${sample}.sorted.bam \
+#  | awk "{sum+=\$3; sumsq+=\$3*\$3} END { print \"Average = \",sum/$genome_size; print \"Stdev = \",sqrt(sumsq/$genome_size - (sum/$genome_size)**2)}" \
+#  >${ALIGNDIR}/${sample}.coverage_summary.txt
+
+echo $(date +%F%t%T) "Running samtools flagstat for whole genome..."
+samtools flagstat ${sample}.sorted.bam \
+  >${ALIGNDIR}/${sample}.flagstat_output.txt
+
 #move to bam data directory <-DO NOT UNCOMMENT THIS BLOCK
 #cd "${BAMDIR}"
 #echo "now in $(pwd)"
@@ -110,7 +120,7 @@ echo $(date +%F%t%T) "Running samtools index on chrX..."
 samtools index ${sample}.chrX.sorted.bam
 
 
-#collect QC metrics of files
+#collect QC metrics of aligned chrX
 echo $(date +%F%t%T) "Running samtools depth..."
 samtools depth -a ${sample}.chrX.sorted.bam \
   | awk "{sum+=\$3; sumsq+=\$3*\$3} END { print \"Average = \",sum/$chrX_size; print \"Stdev = \",sqrt(sumsq/$chrX_size - (sum/$chrX_size)**2)}" \
