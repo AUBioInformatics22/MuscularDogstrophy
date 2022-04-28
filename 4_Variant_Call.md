@@ -1,5 +1,17 @@
 ## Step 4: Variant calling
 
+### Scripts
+
+- **[4_variant_call.sh](scripts/4_variant_call.sh):**
+  - Call variants using `GATK HaplotypeCaller`.
+  - Extract SNP variants using `GATK SelectVariants`.
+  - Filter variants using `GATK VariantFiltration`.
+  - Determine coverage for the resulting VCF files using `vcftools`.
+- **[5_select_variant.sh](scripts/5_select_variant.sh)**
+  - _summarize here_
+- **[create_figures.R](scripts/create_figures.R):**
+  - Generate a bar plot of coverage, including data from previous steps.
+
 ### Process
 
 The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant calling, utilizing `GATK HaplotypeCaller`. The script also extracts only SNP variants using `GATK SelectVariants` and filters variants using `GATK VariantFiltration`. Coverage was determined for the resulting VCF files using `vcftools`. These coverage values were plotted alongside data from previous processing steps to facilitate comparison (Figure 1). The VCF files were compared to the BAM files using IGV.
