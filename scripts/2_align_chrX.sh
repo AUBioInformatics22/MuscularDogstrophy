@@ -1,6 +1,6 @@
 #!/bin/bash
 
-### Use bwa mem to create read groups and align the reads to a reference genome (CanFam6).
+### Use bwa mem to create read groups and align the reads to a reference genome (canFam6).
 ### Subset the alignment to the X chromosome using samtools view.
 ### Collect quality metrics in output text files using samtools depth.
 
