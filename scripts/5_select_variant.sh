@@ -129,29 +129,4 @@ tabix -p vcf "all_samples_SNPs.vcf.gz"
 #tabix -p vcf "0002.vcf.gz"
 #tabix -p vcf "0003.vcf.gz"
 
-# Comparisons not needed for current analysis, but could be interesting to look at later.
-#echo "Comparing male SNPs..."
-#bcftools isec \
-#  0001.chrX.sorted.SNPs.filtered.select.vcf.gz \
-#  0002.chrX.sorted.SNPs.filtered.select.vcf.gz \
-#  -n =2 -p intersect
-
-#echo "Comparing male INDELs..."
-#bcftools isec \
-#  0001.chrX.sorted.INDELs.filtered.select.vcf.gz \
-#  0002.chrX.sorted.INDELs.filtered.select.vcf.gz \
-#  -n =2 -p intersect
-
-#echo "Comparing female SNPs..."
-#bcftools isec \
-#  0005.chrX.sorted.SNPs.filtered.select.vcf.gz \
-#  0006.chrX.sorted.SNPs.filtered.select.vcf.gz \
-#  -n =2 -p intersect
-  
-#echo "Comparing female INDELs..."
-#bcftools isec \
-#  0005.chrX.sorted.INDELs.filtered.select.vcf.gz \
-#  0006.chrX.sorted.INDELs.filtered.select.vcf.gz \
-#  -n =2 -p intersect
-
 echo "all done!"
