@@ -1,8 +1,19 @@
 #!/bin/bash
 
-#Determine coverage (raw and aligned), percent mapped, and percent duplicates for all sequences in Sample_ID_List.txt
-#Create csv files that can be used to make graphs in R.
-#Coverage  = (number of reads * read length) / genome size
+### Determine coverage (raw, aligned, with duplicates marked, and variants),
+### percent mapped, and percent duplicates for given sequences.
+### Create csv files that can be used to make graphs in R (create_figures.R)
+### Coverage  = (number of reads * read length) / genome size
+
+### The following CSV files will be output in the directory containing
+#### the data they are gathering and copied to the designated CSVDIR.
+# all_metrics.csv -> Input for create_figures.R
+# raw_coverage_data.csv
+# aligned_chrX_coverage_data.csv
+# marked_chrX_coverage_data.csv
+# variants_coverage_data.csv
+# percent_mapped_data.csv
+# percent_duplicates_data.csv
 
 ##### DIRECTORIES #####
 PROJDIR="/home/shared/stevison_group2"
@@ -17,10 +28,12 @@ VCFDIR="${PROJDIR}/data/vcf"
 
 ref="canFam6"
 mapfile -t sample_list < <(echo -e "0001\n0002\n0005\n0006")
-#mapfile -t sample_list < "${PROJDIR}/Sample_ID_List.txt"
+output_file="coverage_data.csv"
+
 genome_size="$(awk '{sum+=$2} END {print sum}' ${INDEXDIR}/${ref}.masked.fa.fai)"
 chrX_size="$(awk '/chrX/ {print $2}' ${INDEXDIR}/${ref}.masked.fa.fai)"
-output_file="coverage_data.csv"
+
+# Initialize arrays for each metric.
 declare -a raw_coverage_list=()
 declare -a est_raw_chrX_coverage_list=()
 declare -a aligned_chrX_coverage_list=()
@@ -31,12 +44,11 @@ declare -a perc_dup_list=()
 declare -a var_SNP_coverage_list=()
 declare -a var_INDEL_coverage_list=()
 
-#may add to the workflow
-#declare -a trimmed_coverage_list=()
-
-#checks
+# checks
 echo "Samples: ${sample_list[@]}"
 echo "Genome size: $genome_size"
+echo "chrX size: $chrX_size"
+
 
 ### RAW
 
@@ -44,9 +56,9 @@ cd "${RAWDIR}"
 echo "id,raw,est_raw_chrX" >"raw_${output_file}"
 
 #########
-#in fastqc_data.txt :
-#Total Sequences num_reads
-#Sequence length seq_len
+# in fastqc_data.txt :
+# Total Sequences num_reads
+# Sequence length seq_len
 #########
 
 for sample in ${sample_list[@]}; do
@@ -75,6 +87,7 @@ for sample in ${sample_list[@]}; do
   fi
 done
 
+# Remove temporary files and copy output file to CSV directory.
 rm *.tmp
 cp "raw_${output_file}" "${CSVDIR}"
 
@@ -103,6 +116,7 @@ for sample in ${sample_list[@]}; do
   echo "${sample},${perc_map_wg},${perc_map_chrX}" >>"percent_mapped_data.csv"
 done
 
+# Copy output files to CSV directory.
 cp "aligned_chrX_${output_file}" "${CSVDIR}"
 cp percent_mapped_data.csv "${CSVDIR}"
 
@@ -122,6 +136,7 @@ for sample in "${sample_list[@]}"; do
   echo "${sample},${perc_dup}" >>"percent_duplicates_data.csv"
 done
 
+# Copy output files to CSV directory.
 cp "marked_chrX_${output_file}" "${CSVDIR}"
 cp percent_duplicates_data.csv "${CSVDIR}"
 
@@ -131,10 +146,6 @@ cp percent_duplicates_data.csv "${CSVDIR}"
 cd "${VCFDIR}"
 echo "id,var_SNP,var_INDEL" >"variants_${output_file}"
 
-#need to add making file to previous scripts
-#depth=$(awk 'NR>1 {print $3}' "$sample.idepth")
-
-
 for sample in "${sample_list[@]}"; do
   SNP_coverage=$(awk 'NR>1 {print $3}' "${sample}.chrX.sorted.SNPs.idepth")
   var_SNP_coverage_list+=(${SNP_coverage})
@@ -143,7 +154,7 @@ for sample in "${sample_list[@]}"; do
   echo "${sample},${SNP_coverage},${INDEL_coverage}" >>"variants_${output_file}"
 done
 
-
+# Copy output file to CSV directory.
 cp "variants_${output_file}" "${CSVDIR}"
 
 
@@ -152,14 +163,8 @@ cp "variants_${output_file}" "${CSVDIR}"
 cd "${CSVDIR}"
 echo "id,raw,est_raw_chrX,aligned_chrX,marked_chrX,var_SNP,var_INDEL,percent_mapped_wg,percent_mapped_chrX,percent_duplicates" >"all_metrics.csv"
 
-#workflow with trimming: echo "id,raw,trimmed,aligned,var_SNP,var_INDEL" >"all_${output_file}"
-
 for (( i=0; i<=$((${#sample_list[@]}-1)); i++ )); do
   echo "${sample_list[i]},${raw_coverage_list[i]},${est_raw_chrX_coverage_list[i]},${aligned_chrX_coverage_list[i]},${marked_chrX_coverage_list[i]},${var_SNP_coverage_list[i]},${var_INDEL_coverage_list[i]},${perc_map_wg_list[i]},${perc_map_chrX_list[i]},${perc_dup_list[i]}" \
     >>"${CSVDIR}/all_metrics.csv"
-
-#workflow with trimming:  echo "${sample_list[i]},${raw_coverage_list[i]},${trimmed_coverage_list[i]},${aligned_chrX_coverage_list[i]},${variant_coverage_list[i]}" \
-#    >>"all_${output_file}"
 done
 
-#cp "all_metrics.csv" "${CSVDIR}"
