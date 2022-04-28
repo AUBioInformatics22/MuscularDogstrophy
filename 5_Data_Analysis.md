@@ -4,8 +4,12 @@
 We manually inspected these variants by uploading the vcf file containing the common SNPs among all dogs into IGV (https://software.broadinstitute.org/software/igv/). The annotated reference file (canFam6.chrX.json) was loaded into IGV along with the VCF file containing the SNPs of interest (all_samples_SNPs.vcf.gz). This variant file contains SNPs on the X chromosome that are hemizygous in all affected males and heterozygous in all carrier females. We then zoomed into the DMD gene to visualize and analyze the SNPs present (Figure 
 
 ### Discussion
-We first looked for SNPs that were present in exons on the DMD gene. Though we expected to find none, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon (at position 32505025). This SNP, located in exon 34 (position 32504947-32505117), was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. These results suggest that this particular SNP could be the DMD-causing mutation in the Springer Spaniel, though more work is needed to validate these claims.  
-<br>
+We first looked for SNPs that were present in exons on the DMD gene. Though we expected to find none, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon (at position 32505025). This SNP, located in exon 34 (position 32504947-32505117), was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. Therefore, the mutation causes a change from C to A at position 32505025 on the X chromosome, resulting in an amino acid change from arginine to serine. Exon 34 is translated from reading frame 2. These results suggest that this particular missensene mutation could be the DMD-causing mutation in the Springer Spaniel, though more work is needed to validate these claims.  
+
+**** look at omim ****
+
+
+<br> 
 
 <img src="analysis/0_figures/5_SNPs_DMD.png"  alt="SNPs in DMD Gene">  
 
