@@ -34,9 +34,10 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 ## Results  
 
 
-## Conclusion
-
-We first looked for SNPs that were present in exons on the DMD gene. On the command line, the script `var_metrics.sh` was used to determine that there was an enomourous amount of SNPs. Most of these SNPs were located within introns/non-coding regions. Though we expected to find none, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon. This SNP was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. These results suggest that this particular SNP could be the DMD-causing mutation in the Springer Spaniel, though more work is needed to validate these claims.
+## Conclusions & Future Directions
+On the command line, the script `var_metrics.sh` was used to determine that there was an enomourous amount of SNPs identified on the DMD gene. Most of these SNPs were located within introns/non-coding regions. Though we expected to find no mutations within exons, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon. This SNP, located in exon 34 (position 32504947-32505117), was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. Therefore, the mutation causes a change from C to A at position 32505025 on the X chromosome. This is a silent mutation because it does not affect the encoded amino acid (Alanine). Exon 34 is translated from reading frame 1.  
+  
+We plan to continue this work by adding more samples (2 additional affected males and 2 additional carrier females) and analyze for INDELs as well. We hope to implement some additional tools (such as Snpeff) to narrow our variants to identify functionally relevant SNPs/INDELs. In this way, we can look for mutations that are more likely to produce an effect on the DMD protein. To validate the final results, we will sequence the PCR product of an unaffected/non-carrier female Springer Spaniel.
 
 <br>
 
