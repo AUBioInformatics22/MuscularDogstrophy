@@ -5,10 +5,13 @@
 - **[4_variant_call.sh](scripts/4_variant_call.sh):**
   - Call variants using `GATK HaplotypeCaller`.
   - Extract SNP variants using `GATK SelectVariants`.
-  - Filter variants using `GATK VariantFiltration`.
+  - Hard filter variants using `GATK VariantFiltration`.
   - Determine coverage for the resulting VCF files using `vcftools`.
 - **[5_select_variant.sh](scripts/5_select_variant.sh)**
-  - _summarize here_
+  - Select variants that are hemizygous for an alternate allele in the males using `bcftools view` with the `-i 'GT="alt"'` option.
+  - Select variants that are heterozygous for an alternate allele in the females using `bcftools view` with the `-i 'GT="het"'` option.
+  - Intersect the selected variants and find positions that are in all 4 samples using `bcftools isec`.
+  - Merge files containing selected variants using `bcftools merge`.
 - **[create_figures.R](scripts/create_figures.R):**
   - Generate a bar plot of coverage, including data from previous steps.
 
