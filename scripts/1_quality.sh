@@ -1,6 +1,9 @@
 #!/bin/sh
 
-### This script uses FASTQC in parallel to generate quality reports for each sequence file. The output is a fastqc.html file for each sequence file that can be opened in a browser to view the graphical results.
+### This script uses FASTQC in parallel to generate quality reports for
+### each sequence file. The output is a fastqc.html file for each sequence
+### file that can be opened in a browser to view the graphical results.
+
 #### QUEUE PARAMETERS ####
 # class
 # 4 threads 
