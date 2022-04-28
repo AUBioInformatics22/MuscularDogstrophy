@@ -53,7 +53,6 @@ We first looked for SNPs that were present in exons on the DMD gene. On the comm
 
 Before the sequencing data was received, example data was used to develop the pipeline.
 #### [Step 1 Practice Report: Initial quality assessment of raw NGS data](practice_reports/STEP_1.md)
-#### [Step 2 Practice Report: Alignment of sequencing reads to reference genome](practice_reports/STEP_2.md)
 
 ## References
 1. Kornegay, J.N., Bogan, J.R., Bogan, D.J. et al. Canine models of Duchenne muscular dystrophy and their use in therapeutic strategies. Mamm Genome 23, 85–108 (2012)   
