@@ -24,15 +24,6 @@ Genomic DNA was isolated from 4 affected males and 4 carrier females from the Sp
 
 __Table 1.__ Data description and coverage values throughout processing. 
 
-## Number of Intersected SNPs
-
-| X Chromosome | DMD Gene |
-| ------------ | -------- |
-| 1682        | 380      |
-
-__Table 2.__ Number of SNPs present in all four samples after quality filtering and selecting only SNPs that are hemizygous in males and heterozygous in females.
-
-
 ### Figures
 
 <img src="analysis/0_figures/3_coverage.png"  alt="Coverage of Sequences">
@@ -42,6 +33,14 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 
 
 ## Results  
+
+### Number of SNPs
+
+| X Chromosome | DMD Gene |
+| ------------ | -------- |
+| 1682        | 380      |
+
+__Table 2.__ Number of SNPs present in all four samples after quality filtering and selecting only SNPs that are hemizygous in males and heterozygous in females.
 
 
 ## Conclusions & Future Directions
