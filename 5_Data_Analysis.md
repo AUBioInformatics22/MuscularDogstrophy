@@ -8,12 +8,12 @@ We first looked for SNPs that were present in exons on the DMD gene. Though we e
 
 <br> 
 
-<img src="analysis/0_figures/5_SNPs_DMD.png"  alt="SNPs in DMD Gene">  
+<img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
 __Figure 1.__ A screenshot of IGV showing all SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
 
-<img src="analysis/0_figures/exon_mx.png"  alt="Exon SNP">
-<img src="analysis/0_figures/exon_mx_zoom.png" >
+<img src="analysis/0_figures/DMD_exon_mx.png"  alt="Exon SNP">
+<img src="analysis/0_figures/DMD_exon_mx_zoom.png" >
 
 __Figure 2.__ Screenshot of the SNP present within a DMD exon (bottom=zoomed in). 
  
