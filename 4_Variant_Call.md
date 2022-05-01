@@ -46,7 +46,7 @@ __Table 1.__ Coverage values.
 
 <br>
 
-<img src="analysis/0_figures/5_SNPs_DMD.png"  alt="SNPs in DMD Gene">  
+<img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
 __Figure 2.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
 
