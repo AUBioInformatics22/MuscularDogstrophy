@@ -54,11 +54,6 @@ echo "genome size: ${genome_size}"
 cd "${BAMDIR}"
 echo "now in $(pwd)"
 
-#TODO: Add a check for index files.
-#ls "${INDEXDIR}/*"
-#echo "copy index files to working directory"
-#cp -v "${INDEXDIR}/${ref}."* .
-
 echo
 echo "Running alignment..."
 
@@ -71,27 +66,27 @@ echo "Running alignment..."
 # LB (library) = $flowcell.$lane_id
 ###################
 
-echo $(date +%F%t%T) "Running bwa mem to create sam..."
+echo $(date +%F%t%T) "Running bwa mem to create SAM..."
 bwa mem -M -v 2 -t 8 -R "@RG\tID:$sample.$flowcell.$lane_id\tSM:$sample\tPU:$flowcell.$lane_id\tPL:Illumina\tLB:$flowcell.$lane_id" $ref $forward $reverse \
   >${SCRATCHDIR}/$sample.sam
 
 cd "${SCRATCHDIR}"
 echo "now in $(pwd)"
 
-echo $(date +%F%t%T) "Running samtools view to convert sam to bam..."
+echo $(date +%F%t%T) "Running samtools view to convert SAM to BAM..."
 samtools view -Sb -@ 8 $sample.sam >$sample.bam
 
-echo $(date +%F%t%T) "Running samtools sort to sort bam..."
+echo $(date +%F%t%T) "Running samtools sort to sort BAM..."
 samtools sort -@ 8 -m 1500MB $sample.bam >$sample.sorted.bam
 
-echo $(date +%F%t%T) "Running samtools index on sorted bam..."
+echo $(date +%F%t%T) "Running samtools index on sorted BAM..."
 samtools index $sample.sorted.bam
 
 #collect QC metrics of aligned whole genome
-#echo $(date +%F%t%T) "Running samtools depth for whole genome..."
-#samtools depth -a ${sample}.sorted.bam \
-#  | awk "{sum+=\$3; sumsq+=\$3*\$3} END { print \"Average = \",sum/$genome_size; print \"Stdev = \",sqrt(sumsq/$genome_size - (sum/$genome_size)**2)}" \
-#  >${ALIGNDIR}/${sample}.coverage_summary.txt
+echo $(date +%F%t%T) "Running samtools depth for whole genome..."
+samtools depth -a ${sample}.sorted.bam \
+  | awk "{sum+=\$3; sumsq+=\$3*\$3} END { print \"Average = \",sum/$genome_size; print \"Stdev = \",sqrt(sumsq/$genome_size - (sum/$genome_size)**2)}" \
+  >${ALIGNDIR}/${sample}.coverage_summary.txt
 
 echo $(date +%F%t%T) "Running samtools flagstat for whole genome..."
 samtools flagstat ${sample}.sorted.bam \
@@ -120,7 +115,7 @@ echo $(date +%F%t%T) "Running samtools index on chrX..."
 samtools index ${sample}.chrX.sorted.bam
 
 
-#collect QC metrics of aligned chrX
+#collect metrics of aligned chrX
 echo $(date +%F%t%T) "Running samtools depth..."
 samtools depth -a ${sample}.chrX.sorted.bam \
   | awk "{sum+=\$3; sumsq+=\$3*\$3} END { print \"Average = \",sum/$chrX_size; print \"Stdev = \",sqrt(sumsq/$chrX_size - (sum/$chrX_size)**2)}" \
