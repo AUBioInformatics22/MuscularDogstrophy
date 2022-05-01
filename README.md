@@ -26,7 +26,7 @@ __Table 1.__ Data description and coverage values throughout processing.
 
 ### Figures
 
-<img src="analysis/0_figures/3_coverage.png"  alt="Coverage of Sequences">
+<img src="analysis/0_figures/4_coverage.png"  alt="Bar Graph Comparing Coverage at Different Stages of the Pipeline">  
 
 __Figure 1.__ Bar plot of coverage across several stages of processing (values in Table 1).
 
