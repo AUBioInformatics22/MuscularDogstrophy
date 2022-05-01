@@ -10,6 +10,7 @@ Muscular dystrophy is a term that includes many inherited diseases that affects 
 
 ## Bioinformatic Pipeline
 
+<img src="analysis/0_figures/Muscular Dogstrophy Flowchart.png">
 
 ## Samples
 Genomic DNA was isolated from 4 affected males and 4 carrier females from the Springer Spaniel Duchenne-Like Muscular Dystrophy dog colony in Dr. Bruce F. Smith's lab at the Auburn University College of Veterinary Medicine. Samples were sequenced as 150bp paired-end reads using the NovaSeq 6000 platform with ~30x coverage at HudsonAlpha Discovery in Huntsville, AL.
@@ -21,13 +22,16 @@ Genomic DNA was isolated from 4 affected males and 4 carrier females from the Sp
 | 0005 | Camelia | Carrier Female | 17.96 | 15.06 | 13.73 |
 | 0006 | Dottie | Carrier Female | 22.09 | 18.5 | 16.67 |
 
+__Table 1.__ Data description and coverage values throughout processing. 
+
 ## Number of Intersected SNPs
 
 | X Chromosome | DMD Gene |
 | ------------ | -------- |
 | 1682        | 380      |
 
-__Table 1.__ Data description and coverage values throughout processing. 
+__Table 2.__ Number of SNPs present in all four samples after quality filtering and selecting only SNPs that are hemizygous in males and heterozygous in females.
+
 
 ### Figures
 
@@ -41,7 +45,7 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 
 
 ## Conclusions & Future Directions
-On the command line, the script `var_metrics.sh` was used to determine that there was an enomourous amount of SNPs identified on the DMD gene. Most of these SNPs were located within introns/non-coding regions. Though we expected to find no mutations within exons, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon. This SNP, located in exon 34 (position 32504947-32505117), was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. Therefore, the mutation causes a change from C to A at position 32505025 on the X chromosome. This is a silent mutation because it does not affect the encoded amino acid (Alanine). Exon 34 is translated from reading frame 1.  
+On the command line, the script `var_metrics.sh` was used to determine that there was an enormous amount of SNPs identified on the DMD gene. Most of these SNPs were located within introns/non-coding regions. Though we expected to find no mutations within exons, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon. This SNP, located in exon 34 (position 32504947-32505117), was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. Therefore, the mutation causes a change from C to A at position 32505025 on the X chromosome. This is a silent mutation because it does not affect the encoded amino acid (Alanine). Exon 34 is translated from reading frame 1.  
   
 We plan to continue this work by adding more samples (2 additional affected males and 2 additional carrier females) and analyze for INDELs as well. We hope to implement some additional tools (such as Snpeff) to narrow our variants to identify functionally relevant SNPs/INDELs. In this way, we can look for mutations that are more likely to produce an effect on the DMD protein. To validate the final results, we will sequence the PCR product of an unaffected/non-carrier female Springer Spaniel.
 
