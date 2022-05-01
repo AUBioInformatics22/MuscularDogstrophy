@@ -44,7 +44,7 @@ __Table 1.__ Coverage values.
 
 #### Statistical analysis
 
-We plan to compare the resulting statistical analysis and summary of the datasets. We will include an in depth summary of our data with comments on various quality aspects of our VCF files. We plan to use IGV to show examples of regions where a SNP is considered high quality versus low quality. Our pipeline has generated a high volume of SNP’s and we are in the process of determining those that are of high quality before isolating the area of interest for our final data analysis.
+An analysis and summary was done using USCS Genome Browser and IGV to isolate and preview SNPs of interest within the DMD gene. We will include an in depth summary of our data with comments on various quality aspects of our VCF files. We plan to use IGV to show examples of regions where a SNP is considered high quality versus low quality. Our pipeline has generated a high volume of SNP’s and we are in the process of determining those that are of high quality before isolating the area of interest for our final data analysis.
 
 <img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
