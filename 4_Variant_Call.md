@@ -6,14 +6,6 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 
 ### Discussion
 
-#### Statistical analysis
-
-We plan to compare the resulting statistical analysis and summary of the datasets. We will include an in depth summary of our data with comments on various quality aspects of our VCF files. We plan to use IGV to show examples of regions where a SNP is considered high quality versus low quality. Our pipeline has generated a high volume of SNP’s and we are in the process of determining those that are of high quality before isolating the area of interest for our final data analysis.
-
-#### Coverage
-
-The coverages from Step 1 were calculated for the raw whole genome. Compared to what was observed in the raw data coverage, the aligned chromosome coverage decreased, then further decreased after marking duplicates. However, when comparing the coverages calculated for all Chromosome X variants, the coverage increased significantly compared with the raw whole genome. For each sample, SNP coverage was higher than indels. Between samples, the first two samples (0001 and 0002) had coverages that were very similar. Sample 0005 had markedly higher coverage, and Sample 0006 had the highest coverage overall at all stages of processing (Table 1).
-
 ### Scripts
 
 - **[4_variant_call.sh](scripts/4_variant_call.sh):**
@@ -28,6 +20,10 @@ The coverages from Step 1 were calculated for the raw whole genome. Compared to 
   - Merge files containing selected variants using `bcftools merge`.
 - **[create_figures.R](scripts/create_figures.R):**
   - Generate a bar plot of coverage, including data from previous steps.
+
+#### Coverage
+
+The coverages from Step 1 were calculated for the raw whole genome. Compared to what was observed in the raw data coverage, the aligned chromosome coverage decreased, then further decreased after marking duplicates. However, when comparing the coverages calculated for all Chromosome X variants, the coverage increased significantly compared with the raw whole genome. For each sample, SNP coverage was higher than indels. Between samples, the first two samples (0001 and 0002) had coverages that were very similar. Sample 0005 had markedly higher coverage, and Sample 0006 had the highest coverage overall at all stages of processing (Table 1).
 
 ### Figures
 
@@ -45,6 +41,10 @@ __Figure 1.__ A bar graph showing coverage for each sample at different stages o
 __Table 1.__ Coverage values.
 
 <br>
+
+#### Statistical analysis
+
+We plan to compare the resulting statistical analysis and summary of the datasets. We will include an in depth summary of our data with comments on various quality aspects of our VCF files. We plan to use IGV to show examples of regions where a SNP is considered high quality versus low quality. Our pipeline has generated a high volume of SNP’s and we are in the process of determining those that are of high quality before isolating the area of interest for our final data analysis.
 
 <img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
