@@ -19,7 +19,7 @@ __Figure 2.__ Screenshot of the SNP present within a DMD exon (bottom=zoomed in)
  
 ### Discrepancy in IGV Reading Frame
 
-<img src="analysis/0_figures/IGV_vs_UCSC.png"  alt="IGV vs. UCSC Reading Frame">  
+<img src="analysis/0_figures/IGV_vs_UCSC_.png"  alt="IGV vs. UCSC Reading Frame">  
  __Figure 3.__ IGV showed a discrepancy in how the reading frames were displayed. 
  
 ### Future Directions  
