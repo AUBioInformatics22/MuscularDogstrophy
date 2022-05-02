@@ -7,77 +7,76 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 ### Scripts
 
 - **[4_variant_call.sh](scripts/4_variant_call.sh):**  
-1. Call variants according to ploidy based on gender of dog  
-```
-# Male
-  gatk --java-options "-Xmx8G" HaplotypeCaller \
-      -R "$ref" \
-      -I "${sample}.markdup.bam" \
-      --sample-ploidy 1 \
-      -L chrX \
-      -O "${VCFDIR}/$sample.g.vcf.gz" \
-      -ERC GVCF
-```  
+  - Call variants according to ploidy based on gender of dog  
+  ```
+  # Male
+    gatk --java-options "-Xmx8G" HaplotypeCaller \
+        -R "$ref" \
+        -I "${sample}.markdup.bam" \
+        --sample-ploidy 1 \
+        -L chrX \
+        -O "${VCFDIR}/$sample.g.vcf.gz" \
+        -ERC GVCF
+  ```  
 
-```
-# Female
-   gatk --java-options "-Xmx8G" HaplotypeCaller \
-      -R "$ref" \
-      -I "${sample}.markdup.bam" \
-      --sample-ploidy 2 \
-      -L chrX \
-      -O "${VCFDIR}/$sample.g.vcf.gz" \
-      -ERC GVCF
-```
-  2. Extract SNP variants  
-```
-  gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" \
-    --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"
-```
-    
-  3. Hard filter variants using the GATK suggested SNP filtering parameters to filter out low-quality SNPs  
-```
-  gatk VariantFiltration -R "$ref" --variant "$sample.SNPs.vcf" \  
-    --filter-expression "QD < 2.0" --filter-name "QD2" \  
-    --filter-expression "QUAL < 30.0" --filter-name "QUAL30" \  
-    --filter-expression "SOR > 3.0" --filter-name "SOR3" \  
-    --filter-expression "FS > 60.0" --filter-name "FS60" \  
-    --filter-expression "MQ < 40.0" --filter-name "MQ40" \  
-    --filter-expression "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" \  
-    --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \  
-    --output "$sample.SNPs.filtered.vcf" 
-```
-  4. Determine coverage for the resulting VCF files  
-```
-  vcftools --gzvcf "$sample.SNPs.filtered.vcf.gz" --depth --out "$sample.SNPs" 
- ```
+  ```
+  # Female
+     gatk --java-options "-Xmx8G" HaplotypeCaller \
+        -R "$ref" \
+        -I "${sample}.markdup.bam" \
+        --sample-ploidy 2 \
+        -L chrX \
+        -O "${VCFDIR}/$sample.g.vcf.gz" \
+        -ERC GVCF
+  ```
+  - Extract SNP variants  
+  ```
+    gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" \
+      --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"
+  ```
+  - Hard filter variants using the GATK suggested SNP filtering parameters to filter out low-quality SNPs  
+  ```
+    gatk VariantFiltration -R "$ref" --variant "$sample.SNPs.vcf" \  
+      --filter-expression "QD < 2.0" --filter-name "QD2" \  
+      --filter-expression "QUAL < 30.0" --filter-name "QUAL30" \  
+      --filter-expression "SOR > 3.0" --filter-name "SOR3" \  
+      --filter-expression "FS > 60.0" --filter-name "FS60" \  
+      --filter-expression "MQ < 40.0" --filter-name "MQ40" \  
+      --filter-expression "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" \  
+      --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \  
+      --output "$sample.SNPs.filtered.vcf" 
+  ```
+  - Determine coverage for the resulting VCF files  
+  ```
+    vcftools --gzvcf "$sample.SNPs.filtered.vcf.gz" --depth --out "$sample.SNPs" 
+  ```
   
 - **[5_select_variant.sh](scripts/5_select_variant.sh)**  
-1. Select variants that are hemizygous for an alternate allele in the males        
-```
- bcftools view -i 'GT="alt"' \
-  -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
-  "${sample}.chrX.sorted.SNPs.filtered.vcf.gz" 
- ```
-  2. Select variants that are heterozygous for an alternate allele in the females    
-```
-  bcftools view -i 'GT="het"' \
+  - Select variants that are hemizygous for an alternate allele in the males        
+  ```
+   bcftools view -i 'GT="alt"' \
     -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
-    "${sample}.chrX.sorted.SNPs.filtered.vcf.gz" `  
-```
-  3. Intersect the selected variants and find positions that are in all 4 samples   
-```
-  bcftools isec \
-    -n =4 -p intersect_SNP \
-    0001.chrX.sorted.SNPs.filtered.select.vcf.gz \
-    0002.chrX.sorted.SNPs.filtered.select.vcf.gz \
-    0005.chrX.sorted.SNPs.filtered.select.vcf.gz \
-    0006.chrX.sorted.SNPs.filtered.select.vcf.gz 
-```
-  4. Merge files containing selected variants
-```
-  bcftools merge -f .,PASS 0000.vcf.gz 0001.vcf.gz 0002.vcf.gz 0003.vcf.gz >all_samples_SNPs.vcf
-```
+    "${sample}.chrX.sorted.SNPs.filtered.vcf.gz" 
+   ```
+  - Select variants that are heterozygous for an alternate allele in the females    
+  ```
+    bcftools view -i 'GT="het"' \
+      -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
+      "${sample}.chrX.sorted.SNPs.filtered.vcf.gz" `  
+  ```
+  - Intersect the selected variants and find positions that are in all 4 samples   
+  ```
+    bcftools isec \
+      -n =4 -p intersect_SNP \
+      0001.chrX.sorted.SNPs.filtered.select.vcf.gz \
+      0002.chrX.sorted.SNPs.filtered.select.vcf.gz \
+      0005.chrX.sorted.SNPs.filtered.select.vcf.gz \
+      0006.chrX.sorted.SNPs.filtered.select.vcf.gz 
+  ```
+  - Merge files containing selected variants
+  ```
+    bcftools merge -f .,PASS 0000.vcf.gz 0001.vcf.gz 0002.vcf.gz 0003.vcf.gz >all_samples_SNPs.vcf
+  ```
 - **[create_figures.R](scripts/create_figures.R):**  
   - Generate a bar plot of coverage, including data from previous steps.  
   - Generate a bar plot of number of SNPs, unfiltered and filtered.  
@@ -108,7 +107,7 @@ __Table 1.__ Coverage values.
 
 #### Filtering
 
-Analysis and summary were performed to identify SNPs of interest within the Dystrophin gene (DMD). As stated in the main README, the DMD gene is of interest because it is thought to be the causative gene for muscular dystrophy in dogs. The analysis on the command line produced a high volume of SNPs in chromosome X as seen by the unfiltered section in Figure 2 and Table 2. The low quality SNPs were then hard-filtered out using the parameters noted above. Figure 2 shows the difference in number of SNPs before and after quality filtering. The filtered SNPs were then analyzed on IGV and USCS Genome browser to preview the SNPs located within the X chromosome that were deemed high quality. The overview of the SNP locations within the DMD gene can be seen below in Figure 3. 
+Analysis and summary were performed to identify SNPs of interest within the Dystrophin gene (DMD). As stated in the main README, the DMD gene is of interest because it is thought to be the causative gene for muscular dystrophy in dogs. The DMD gene annotation used for this project was from the `ncbiRefSeq.gtf.gz` file associated with canFam6 and downloaded from [UCSC Genome Browser canFam6 Downloads Page](https://hgdownload.soe.ucsc.edu/goldenPath/canFam6/bigZips/genes/). The analysis on the command line produced a high volume of SNPs in chromosome X as seen by the unfiltered section in Figure 2 and Table 2. The low quality SNPs were then hard-filtered out using the parameters noted above. Figure 2 shows the difference in number of SNPs before and after quality filtering.
 
 <img src="analysis/0_figures/4_SNP_filter.png">
 
@@ -125,7 +124,7 @@ __Table 2.__ Filtered versus unfiltered values.
 
 #### SNPs of Interest 
 
-After hard-filtering and selecting SNPs based on quality and zygosity, 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. Table 3 and Figure 3 reflect this conclusion. Figure 3 shows all intersections of SNPs within the DMD region of the X chromosome. The SNPs were then placed into IGV which allowed for visualization of SNP location within the DMD gene (Figure 4). IGV was also used to visualize the SNPs based on coverage in to determine the overall quality of the SNPs (Figure 5). 
+After hard-filtering and selecting SNPs based on quality and zygosity, 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. Table 3 and Figure 3 reflect this conclusion. Figure 3 shows all intersections of SNPs within the DMD region of the X chromosome. The SNPs were then placed into IGV which allowed for visualization of SNP locations within the DMD gene (Figure 4). IGV was also used to visualize the SNPs based on coverage in to determine the overall quality of the SNPs (Figure 5). 
 
 | X Chromosome | DMD Gene |
 | ------------ | -------- |
@@ -137,10 +136,13 @@ __Table 3.__ Number of SNPs present in all four samples after quality filtering 
 
 __Figure 3.__ Upset plot of the intersect between sample SNPs within the DMD gene
 
+<br>
 
 <img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
 __Figure 4.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
+
+<br>
 
 <img src="analysis/0_figures/good_vs_bad_coverage_IGV.png">
 
