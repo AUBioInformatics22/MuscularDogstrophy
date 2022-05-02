@@ -36,8 +36,6 @@ IGV showed a discrepancy in how the reading frames were displayed. IGV showed th
 
  __Figure 3.__ Screenshot of IGV and UCSC browser showing a discrepancy in how the reading frames are displayed. Amino acid sequence "MELT" (boxed in red) is shown in reading frame 3 in IGV (left) but shown in reading frame 1 in UCSC browser (right).
   
-### Future Directions  
-We plan to continue this work by adding more samples (2 additional affected males and 2 additional carrier females) and analyze for INDELs as well. We hope to implement some additional tools (such as Snpeff) to narrow our variants to identify functionally relevant SNPs/INDELs. In this way, we can look for mutations that are more likely to produce an effect on the DMD protein. To validate the final results, we will sequence the PCR product of an unaffected/non-carrier female Springer Spaniel. 
 
 ### Contributions
 Jackie Barry: graphical analysis and discussion  
