@@ -7,9 +7,16 @@ This step of the analysis picks up at the end of step 2. The output from the ali
 ### Scripts:
 
 - **[3_duplicates.sh](scripts/3_duplicates.sh):**
-  - Sort, index, and mark duplicates for the BAM files.
+  - Sort, index, and mark duplicates for the BAM files.  
+  ```
+  gatk --java-options "-Xmx1G" MarkDuplicates \
+    -R $reference \
+    -I $sample -M "${output_prefix}.dup_metrics" \
+    -O "${output_prefix}.markdup.bam"
+  ```
 - **[dup_metrics.sh](scripts/dup_metrics.sh):**
-  - Determine coverage of the marked BAM files using `samtools depth`.
+  - Determine coverage of the marked BAM files.  
+  `samtools depth -a ${sample}.chrX.sorted.markdup.bam`
   - Get metrics using `samtools flagstat`.
   - Note: percent duplicates is calculated in the script: [stat_csv.sh](scripts/stat_csv.sh) from the metrics file output by `3_duplicates.sh`.
 - **[create_figures.R](scripts/create_figures.R):**
