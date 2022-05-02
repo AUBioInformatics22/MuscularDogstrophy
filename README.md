@@ -68,7 +68,7 @@ We plan to continue this work by adding more samples (2 additional affected male
 
 ## Practice Data Reports
 
-Before the sequencing data was received, example data was used to develop the pipeline.
+Before the sequencing data was received, example data was used to develop initial steps of the pipeline.
 #### [Step 1 Practice Report: Initial quality assessment of raw NGS data](practice_reports/STEP_1.md)
 
 ## References
