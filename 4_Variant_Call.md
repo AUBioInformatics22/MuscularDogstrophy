@@ -79,6 +79,8 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 ```
 - **[create_figures.R](scripts/create_figures.R):**  
   - Generate a bar plot of coverage, including data from previous steps.  
+  - Generate a bar plot of number of SNPs, unfiltered and filtered.  
+  - Generate an upset plot of the intersection between samples of SNPs in the DMD gene.  
 
 ### Discussion
 
