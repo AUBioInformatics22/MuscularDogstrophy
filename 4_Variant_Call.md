@@ -44,11 +44,11 @@ __Table 1.__ Coverage values.
 
 #### Statistical analysis
 
-An analysis and summary was done using USCS Genome Browser and IGV to isolate and preview SNPs of interest within the DMD gene. We will include an in depth summary of our data with comments on various quality aspects of our VCF files. We plan to use IGV to show examples of regions where a SNP is considered high quality versus low quality. Our pipeline has generated a high volume of SNP’s and we are in the process of determining those that are of high quality before isolating the area of interest for our final data analysis.
+Analysis and summary were performed to identify SNPs of interest within the Dystrophin gene (DMD). As stated in the main README, the DMD gene is of interest because it is thought to be the causative gene for muscular dystrophy in dogs. The analysis on the command line produced a high volume of SNPs in chromosome X as seen by the unfiltered section in Figure 2 and Table 2. The low quality SNPs were then hard-filtered out using the parameters noted above. Figure 2 shows the difference in number of SNPs before and after quality filtering. The filtered SNPs were then analyzed on IGV and USCS Genome browser to preview the SNPs located within the X chromosome that were deemed high quality. The overview of the SNP locations within the DMD gene can be seen below in Figure 3. 
 
 <img src="analysis/0_figures/4_SNP_filter.png">
 
-__Figure 2.__ Bar plot comparing filtered versus unfilterd SNPs.
+__Figure 2.__ Bar plot comparing filtered versus unfiltered SNPs in chromosome X.
 
 | Sample ID | Unfiltered | Filtered |
 | --------- | ---------- | -------- |
@@ -57,7 +57,7 @@ __Figure 2.__ Bar plot comparing filtered versus unfilterd SNPs.
 | 0005      | 36,394     | 34,556   |
 | 0006      | 42,220     | 40,417   |
 
-__Table 2.__ Filtered versus Unfiltered Values.
+__Table 2.__ Filtered versus unfiltered values.
 
 <img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
