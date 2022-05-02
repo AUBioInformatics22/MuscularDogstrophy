@@ -9,8 +9,8 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 - **[4_variant_call.sh](scripts/4_variant_call.sh):**  
   - Call variants  
   male:   
-  `if [[ "$samplenum" == "0001" || "$samplenum" == "0002" ]]; then
-    echo "Sample $samplenum is a male"
+  `if [[ "$samplenum" == "0001" || "$samplenum" == "0002" ]]; then  
+    echo "Sample $samplenum is a male"  
     gatk --java-options "-Xmx8G" HaplotypeCaller \
       -R "$ref" \
       -I "${sample}.markdup.bam" \
@@ -20,9 +20,9 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
       -ERC GVCF
   fi`  
   
-    female:    
-  `if [[ "$samplenum" == "0005" || "$samplenum" == "0006" ]]; then
-    echo "Sample $samplenum is a female"
+    female:     
+  `if [[ "$samplenum" == "0005" || "$samplenum" == "0006" ]]; then  
+    echo "Sample $samplenum is a female"  
     gatk --java-options "-Xmx8G" HaplotypeCaller \
       -R "$ref" \
       -I "${sample}.markdup.bam" \
@@ -30,7 +30,7 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
       -L chrX \
       -O "${VCFDIR}/$sample.g.vcf.gz" \
       -ERC GVCF
-  fi `
+  fi `  
   - Extract SNP variants  
     `gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"`
     
