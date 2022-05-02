@@ -31,7 +31,8 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 ```
   2. Extract SNP variants  
 ```
-  gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"
+  gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" 
+    --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"
 ```
     
   3. Hard filter variants using the GATK suggested SNP filtering parameters to filter out low-quality SNPs  
