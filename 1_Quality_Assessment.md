@@ -50,7 +50,7 @@ __Table 2.__ Per base quality assessment reports by sample (from FastQC).
 Galaxy was run on data that was of public domain. Our group did an analysis in galaxy comparing FastQC in galaxy versus FastQC on the command line. These comparisons can be found linked below as well as on the main README page. This analysis helped us decide to move forward doing FastQC on the command line only for the data used within this project.
 
 ### Script Markdown: [1_quailty.sh ](scripts/1_quality.sh)
-1.) use FASTQC in parallel on all files ending with .fastq.gz  
+1.) use FASTQC in parallel (using the most efficient number of cores available) on all files ending with .fastq.gz  
 `ls *.fastq.gz | parallel -j+0 --eta 'fastqc {}' `
   
 #### [Step 1 Practice Report: Initial quality assessment of raw NGS data](practice_reports/STEP_1.md)
