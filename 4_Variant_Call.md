@@ -88,8 +88,6 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 
 The coverages from Step 1 were calculated for the raw whole genome. Compared to what was observed in the raw data coverage, the aligned chromosome coverage decreased, then further decreased after marking duplicates. However, when comparing the coverages calculated for all Chromosome X variants, the coverage increased significantly compared with the raw whole genome. For each sample, SNP coverage was higher than indels. Between samples, the first two samples (0001 and 0002) had coverages that were very similar. Sample 0005 had markedly higher coverage, and Sample 0006 had the highest coverage overall at all stages of processing (Table 1).
 
-### Figures
-
 <img src="analysis/0_figures/4_coverage.png"  alt="Bar Graph Comparing Coverage at Different Stages of the Pipeline">  
 
 __Figure 1.__ A bar graph showing coverage for each sample at different stages of processing (values in Table 1).
@@ -105,7 +103,9 @@ __Table 1.__ Coverage values.
 
 <br>
 
-#### Statistical analysis
+### Analysis of SNPs
+
+#### Filtering
 
 Analysis and summary were performed to identify SNPs of interest within the Dystrophin gene (DMD). As stated in the main README, the DMD gene is of interest because it is thought to be the causative gene for muscular dystrophy in dogs. The analysis on the command line produced a high volume of SNPs in chromosome X as seen by the unfiltered section in Figure 2 and Table 2. The low quality SNPs were then hard-filtered out using the parameters noted above. Figure 2 shows the difference in number of SNPs before and after quality filtering. The filtered SNPs were then analyzed on IGV and USCS Genome browser to preview the SNPs located within the X chromosome that were deemed high quality. The overview of the SNP locations within the DMD gene can be seen below in Figure 3. 
 
@@ -122,13 +122,28 @@ __Figure 2.__ Bar plot comparing filtered versus unfiltered SNPs in chromosome X
 
 __Table 2.__ Filtered versus unfiltered values.
 
+#### SNPs of Interest 
+
+After hard-filtering and selecting SNPs based on quality and zygosity, 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. Table 3 and Figure 3 reflect this conclusion. Figure 3 shows all intersections of SNPs within the DMD region of the X chromosome. The SNPs were then placed into IGV (Figure 4) which allowed for visualization of SNP location within the DMD gene. The SNPs were also visualized based on coverage in IGV to determine the overall quality of the SNPs (Figure 5). 
+
+| X Chromosome | DMD Gene |
+| ------------ | -------- |
+| 1682        | 380      |
+
+__Table 3.__ Number of SNPs present in all four samples after quality filtering and selecting only SNPs that are hemizygous in males and heterozygous in females.
+
+<img src="analysis/0_figures/4_DMD_upset.png">
+
+__Figure 3.__ Upset plot of the intersect between sample SNPs within the DMD gene
+
+
 <img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
-__Figure 3.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
+__Figure 4.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
 
 <img src="analysis/0_figures/good_vs_bad_coverage_IGV.png">
 
-__Figure 4.__ Comparison of "good" vs. "bad" SNPs in terms of coverage. "Good" SNPs will be supported with high coverage for all samples; in this case, sample 0001 (top of figure) shows poor coverage for this particular SNP, as evidenced by the 0001.chrX.sorted.markdup.bam Coverage track.
+__Figure 5.__ Comparison of "good" vs. "bad" SNPs in terms of coverage. "Good" SNPs will be supported with high coverage for all samples; in this case, sample 0001 (top of figure) shows poor coverage for this particular SNP, as evidenced by the 0001.chrX.sorted.markdup.bam Coverage track.
 
 <br>
 
