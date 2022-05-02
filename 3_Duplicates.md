@@ -30,7 +30,7 @@ This step of the analysis picks up at the end of step 2. The output from the ali
 
 #### Coverage Analysis
 
-The coverage that was calculated across the different stages of analysis thus far can be seen in Figure 1 and Table 1. Per the data represented below, the coverage decreases with each stage of the analysis.
+The coverage that has been calculated across the different stages of analysis thus far can be seen in Figure 1 and Table 1. Per the data represented below, the coverage decreases with each stage of the analysis.
 
 <img src="analysis/0_figures/3_coverage.png"  alt="Coverage of Sequences">
 
