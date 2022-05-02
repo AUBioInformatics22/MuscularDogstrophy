@@ -77,6 +77,10 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
   ```
     bcftools merge -f .,PASS 0000.vcf.gz 0001.vcf.gz 0002.vcf.gz 0003.vcf.gz >all_samples_SNPs.vcf
   ```
+- **[compare_vcf_DMD.sh](compare_vcf_DMD.sh):** 
+  - Compare VCFs to find common SNPs using `vcftools vcf-compare`.
+- **[var_metrics.sh](var_metrics.sh):**
+  - Determine the number of SNPs after each stage of processing.
 - **[create_figures.R](scripts/create_figures.R):**  
   - Generate a bar plot of coverage, including data from previous steps.  
   - Generate a bar plot of number of SNPs, unfiltered and filtered.  
