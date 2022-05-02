@@ -33,7 +33,7 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 
 ### Number of SNPs
 
-After hard-filtering and selecting SNPs based on quality and zygosity in [Step 4 Report: Variant calling](4_Variant_Call.md), 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. The table and figure below reflect this data. Figure 2 shows all intersections of SNPs within the DMD region of the X chromosome.
+After hard-filtering and selecting SNPs based on quality and zygosity in [Step 4: Variant calling](4_Variant_Call.md), 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. The table and figure below reflect this data. Figure 2 shows all intersections of SNPs within the DMD region of the X chromosome.
 
 | X Chromosome | DMD Gene |
 | ------------ | -------- |
