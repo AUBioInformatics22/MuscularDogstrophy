@@ -14,6 +14,8 @@ This step of the analysis picks up at the end of step 2. The output from the ali
     -I $sample -M "${output_prefix}.dup_metrics" \
     -O "${output_prefix}.markdup.bam"
   ```
+- **[replace_read_group.sh](replace_read_group.sh):**
+  - Replace the read groups for each sample based on unique metadata.
 - **[dup_metrics.sh](scripts/dup_metrics.sh):**
   - Determine coverage of the marked BAM files. 
   ``` 
@@ -23,7 +25,7 @@ This step of the analysis picks up at the end of step 2. The output from the ali
   ```
   samtools flagstat ${sample}.chrX.sorted.markdup.bam >${DUPDIR}/${sample}.chrX.marked.flagstat_output.txt
   ```
-  - Note: percent duplicates is calculated in the script: [stat_csv.sh](scripts/stat_csv.sh) from the metrics file output by `3_duplicates.sh`.
+  - Note: percent duplicates is calculated in the script: [stat_csv.sh](scripts/stat_csv.sh) from the metrics file output by [3_duplicates.sh](3_duplicates.sh).
 - **[create_figures.R](scripts/create_figures.R):**
   - Generate a bar plot of coverage, including raw, aligned, and marked data.
   - Generate a bar plot of percent duplicates.
