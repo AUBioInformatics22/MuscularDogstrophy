@@ -4,7 +4,7 @@
 
 We first indexed our canine reference genome (canFam6) using bwa index and the script: [0_index_genome.sh](scripts/0_index_genome). We then aligned the samples to the reference genome (CanFam6) using the script: [2_align_chrX.sh](scripts/2_align_chrX.sh). Given that the muscular dystrophy disorder that we are investigating is X-linked, we subset by the X chromosome using `samtools view`. We used `samtools flagstat` and `samtools depth` to summarize the alignment quality of our sequences, and then generated a bar plot of coverage, including raw and aligned data using the script: [create_figures.R](scripts/create_figures.R). The same script was used to produce a bar plot of percent mapped.
 
-We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FastQC' (see step 1).
+We decided not to trim our samples since all Phred scores indicated high quality DNA as evidenced by the results of 'FastQC' in [Step 1: Initial quality assessment of raw NGS data](1_Quality_Assessment.md).
  
 
 ### Scripts
