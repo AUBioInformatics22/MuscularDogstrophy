@@ -9,7 +9,7 @@ Given that the per base sequence quality of our data is relatively high (above 3
 
 ### Scripts
 **[1_quality.sh](scripts/1_quality.sh):** Generate quality assessment reports using `FastQC` (see Table 2).  
-1.) FASTQC using `GNU parallel` (using the most efficient number of cores available) on all files ending with .fastq.gz   
+1.) FastQC using `GNU parallel` (using the most efficient number of cores available) on all files ending with .fastq.gz   
 
 ```
 ls *.fastq.gz | parallel -j+0 --eta 'fastqc {}' 
