@@ -7,7 +7,7 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 ### Scripts
 
 - **[4_variant_call.sh](scripts/4_variant_call.sh):**  
-  - Call variants using `GATK HaplotypeCaller`.    
+  - Call variants  
   male:   
   `if [[ "$samplenum" == "0001" || "$samplenum" == "0002" ]]; then
     echo "Sample $samplenum is a male"
@@ -31,11 +31,11 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
       -O "${VCFDIR}/$sample.g.vcf.gz" \
       -ERC GVCF
   fi `
-  - Extract SNP variants using `GATK SelectVariants`.  
+  - Extract SNP variants  
     `gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"`
     
-  - Hard filter variants using `GATK VariantFiltration`.  
-    `gatk VariantFiltration -R "$ref" --variant "$sample.SNPs.vcf" \  
+  - Hard filter variants  
+   `gatk VariantFiltration -R "$ref" --variant "$sample.SNPs.vcf" \  
     --filter-expression "QD < 2.0" --filter-name "QD2" \  
     --filter-expression "QUAL < 30.0" --filter-name "QUAL30" \  
     --filter-expression "SOR > 3.0" --filter-name "SOR3" \  
@@ -44,10 +44,10 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
     --filter-expression "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" \  
     --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \  
     --output "$sample.SNPs.filtered.vcf" `
-  - Determine coverage for the resulting VCF files using `vcftools`.  
+  - Determine coverage for the resulting VCF files  
   `vcftools --gzvcf "$sample.SNPs.filtered.vcf.gz" --depth --out "$sample.SNPs" `
 - **[5_select_variant.sh](scripts/5_select_variant.sh)**  
-  - Select variants that are hemizygous for an alternate allele in the males using `bcftools view` with the `-i 'GT="alt"'` option.    
+  - Select variants that are hemizygous for an alternate allele in the males:      
   `for sample in "${male_samples[@]}"; do  
   bcftools view -i 'GT="alt"' \
   -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
@@ -57,7 +57,7 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
     `tabix -p vcf "${sample}.chrX.sorted.SNPs.filtered.select.vcf.gz"`
   
     
-  - Select variants that are heterozygous for an alternate allele in the females using `bcftools view` with the `-i 'GT="het"'` option.
+  - Select variants that are heterozygous for an alternate allele in the females:  
   `for sample in "${female_samples[@]}"; do
   bcftools view -i 'GT="het"' \
   -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
@@ -66,7 +66,7 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
     `bgzip -f "${sample}.chrX.sorted.SNPs.filtered.select.vcf"`  
     `tabix -p vcf "${sample}.chrX.sorted.SNPs.filtered.select.vcf.gz"`  
   
-  - Intersect the selected variants and find positions that are in all 4 samples using `bcftools isec`.  
+  - Intersect the selected variants and find positions that are in all 4 samples   
   `bcftools isec \
   -n =4 -p intersect_SNP \
   0001.chrX.sorted.SNPs.filtered.select.vcf.gz \
@@ -74,9 +74,9 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
   0005.chrX.sorted.SNPs.filtered.select.vcf.gz \
   0006.chrX.sorted.SNPs.filtered.select.vcf.gz `  
   - Merge files containing selected variants using `bcftools merge`.
-  `bcftools merge -f .,PASS 0000.vcf.gz 0001.vcf.gz 0002.vcf.gz 0003.vcf.gz >all_samples_SNPs.vcf`  
-  `bgzip -f all_samples_SNPs.vcf`  
-  `tabix -p vcf "all_samples_SNPs.vcf.gz"`  
+ `bcftools merge -f .,PASS 0000.vcf.gz 0001.vcf.gz 0002.vcf.gz 0003.vcf.gz >all_samples_SNPs.vcf`  
+ `bgzip -f all_samples_SNPs.vcf`  
+ `tabix -p vcf "all_samples_SNPs.vcf.gz"`  
 - **[create_figures.R](scripts/create_figures.R):**  
   - Generate a bar plot of coverage, including data from previous steps.  
 
