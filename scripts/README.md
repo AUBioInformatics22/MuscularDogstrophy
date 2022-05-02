@@ -32,6 +32,10 @@
 - **[dup_metrics.sh](dup_metrics.sh):**
   - Determine coverage of the marked BAM files using `samtools depth`.
   - Get metrics using `samtools flagstat`.
+- **[compare_vcf_DMD.sh](compare_vcf_DMD.sh):** 
+  - Compare VCFs to find common SNPs using `vcftools vcf-compare`.
+- **[var_metrics.sh](var_metrics.sh):**
+  - Determine the number of SNPs after each stage of processing.
 - **[stat_csv.sh](stat_csv.sh):** 
   - Create csv files that can be used to make graphs in R (create_figures.R).
   - Calculate raw coverage metrics from fastqc_data.txt files output by `1_quality.sh`.
