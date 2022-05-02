@@ -4,8 +4,6 @@
 
 The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant calling, utilizing `GATK HaplotypeCaller`. The script also extracts only SNP variants using `GATK SelectVariants` and filters variants using `GATK VariantFiltration`. Coverage was determined for the resulting VCF files using `vcftools`. These coverage values were plotted alongside data from previous processing steps to facilitate comparison (Figure 1). The VCF files were compared to the BAM files using IGV.
 
-### Discussion
-
 ### Scripts
 
 - **[4_variant_call.sh](scripts/4_variant_call.sh):**
@@ -20,6 +18,8 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
   - Merge files containing selected variants using `bcftools merge`.
 - **[create_figures.R](scripts/create_figures.R):**
   - Generate a bar plot of coverage, including data from previous steps.
+
+### Discussion
 
 #### Coverage
 
