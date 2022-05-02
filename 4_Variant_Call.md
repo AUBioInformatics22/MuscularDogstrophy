@@ -50,6 +50,9 @@ An analysis and summary was done using USCS Genome Browser and IGV to isolate an
 
 __Figure 2.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
 
+<img src="analysis/0_figures/4_SNP_filter.png">
+__Figure 3.__ A chart showing the results of command line analysis on filtered versus unfilterd SNPs.
+
 <br>
 
 #### Contributions
