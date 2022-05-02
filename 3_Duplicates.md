@@ -70,11 +70,6 @@ __Figure 3.__ Screenshot of IGV comparing coverage before and after marking dupl
 
 <br>
 
-<img src="analysis/0_figures/good_vs_bad_coverage_IGV.png">
-
-__Figure 4.__ Comparison of "good" vs. "bad" SNPs in terms of coverage. "Good" SNPs will be supported with high coverage for all samples; in this case, sample 0001 (top of figure) shows poor coverage for this particular SNP, as evidenced by the 0001.chrX.sorted.markdup.bam Coverage track. 
-<br>
-
 #### Contributions
 Jacqueline Barry: graphical analysis and discussion  
 Rebecca Nance: IGV analysis  
