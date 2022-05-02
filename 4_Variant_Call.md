@@ -6,11 +6,10 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 
 ### Scripts
 
-- **[4_variant_call.sh](scripts/4_variant_call.sh):**
+- **[4_variant_call.sh](scripts/4_variant_call.sh):**  
 1. Call variants according to ploidy based on gender of dog  
-
-Male:
 ```
+# Male
   gatk --java-options "-Xmx8G" HaplotypeCaller \
       -R "$ref" \
       -I "${sample}.markdup.bam" \
@@ -18,9 +17,10 @@ Male:
       -L chrX \
       -O "${VCFDIR}/$sample.g.vcf.gz" \
       -ERC GVCF
+```  
+
 ```
-Female:
-```
+# Female
    gatk --java-options "-Xmx8G" HaplotypeCaller \
       -R "$ref" \
       -I "${sample}.markdup.bam" \
@@ -35,7 +35,6 @@ Female:
 ```
     
   3. Hard filter variants using the GATK suggested SNP filtering parameters to filter out low-quality SNPs  
-  
 ```
   gatk VariantFiltration -R "$ref" --variant "$sample.SNPs.vcf" \  
     --filter-expression "QD < 2.0" --filter-name "QD2" \  
@@ -53,13 +52,13 @@ Female:
  ```
   
 - **[5_select_variant.sh](scripts/5_select_variant.sh)**  
-  1. Select variants that are hemizygous for an alternate allele in the males:        
+1. Select variants that are hemizygous for an alternate allele in the males        
 ```
  bcftools view -i 'GT="alt"' \
   -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
   "${sample}.chrX.sorted.SNPs.filtered.vcf.gz" 
  ```
-  2. Select variants that are heterozygous for an alternate allele in the females:    
+  2. Select variants that are heterozygous for an alternate allele in the females    
 ```
   bcftools view -i 'GT="het"' \
     -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
