@@ -124,7 +124,7 @@ __Table 2.__ Filtered versus unfiltered values.
 
 #### SNPs of Interest 
 
-After hard-filtering and selecting SNPs based on quality and zygosity, 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. Table 3 and Figure 3 reflect this conclusion. Figure 3 shows all intersections of SNPs within the DMD region of the X chromosome. The SNPs were then placed into IGV which allowed for visualization of SNP location within the DMD gene (Figure 4). The SNPs were also visualized based on coverage in IGV to determine the overall quality of the SNPs (Figure 5). 
+After hard-filtering and selecting SNPs based on quality and zygosity, 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. Table 3 and Figure 3 reflect this conclusion. Figure 3 shows all intersections of SNPs within the DMD region of the X chromosome. The SNPs were then placed into IGV which allowed for visualization of SNP location within the DMD gene (Figure 4). IGV was also used to visualize the SNPs based on coverage in to determine the overall quality of the SNPs (Figure 5). 
 
 | X Chromosome | DMD Gene |
 | ------------ | -------- |
