@@ -34,7 +34,8 @@ Female:
   gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"
 ```
     
-  3. Hard filter variants  
+  3. Hard filter variants using the GATK suggested SNP filtering parameters to filter out low-quality SNPs  
+  
 ```
   gatk VariantFiltration -R "$ref" --variant "$sample.SNPs.vcf" \  
     --filter-expression "QD < 2.0" --filter-name "QD2" \  
