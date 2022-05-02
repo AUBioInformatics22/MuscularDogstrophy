@@ -46,13 +46,9 @@ __Table 1.__ Coverage values.
 
 An analysis and summary was done using USCS Genome Browser and IGV to isolate and preview SNPs of interest within the DMD gene. We will include an in depth summary of our data with comments on various quality aspects of our VCF files. We plan to use IGV to show examples of regions where a SNP is considered high quality versus low quality. Our pipeline has generated a high volume of SNP’s and we are in the process of determining those that are of high quality before isolating the area of interest for our final data analysis.
 
-<img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
-
-__Figure 2.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
-
 <img src="analysis/0_figures/4_SNP_filter.png">
 
-__Figure 3.__ Bar plot comparing filtered versus unfilterd SNPs.
+__Figure 2.__ Bar plot comparing filtered versus unfilterd SNPs.
 
 | Sample ID | Unfiltered | Filtered |
 | --------- | ---------- | -------- |
@@ -63,6 +59,9 @@ __Figure 3.__ Bar plot comparing filtered versus unfilterd SNPs.
 
 __Table 2.__ Filtered versus Unfiltered Values.
 
+<img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
+
+__Figure 3.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
 <br>
 
 #### Contributions
