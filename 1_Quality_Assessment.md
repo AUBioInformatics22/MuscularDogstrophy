@@ -8,9 +8,12 @@ Given that the per base sequence quality of our data is relatively high (above 3
 `(number of reads x read length)/genome size`.
 
 ### Scripts
-**[1_quality.sh](scripts/1_quality.sh):** uses the command line tool `FastQC` to generate quality assessment reports (see Table 2).  
-1.) use FASTQC in parallel (using the most efficient number of cores available) on all files ending with .fastq.gz   
-`ls *.fastq.gz | parallel -j+0 --eta 'fastqc {}' `
+**[1_quality.sh](scripts/1_quality.sh):** Generate quality assessment reports using `FastQC` (see Table 2).  
+1.) FASTQC using `GNU parallel` (using the most efficient number of cores available) on all files ending with .fastq.gz   
+
+```
+ls *.fastq.gz | parallel -j+0 --eta 'fastqc {}' 
+```
 
 
 
