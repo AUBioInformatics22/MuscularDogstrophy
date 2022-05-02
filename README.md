@@ -15,12 +15,12 @@ Muscular dystrophy is a term that includes many inherited diseases that affects 
 ## Samples and Results
 Genomic DNA was isolated from 4 affected males and 4 carrier females from the Springer Spaniel Duchenne-Like Muscular Dystrophy dog colony in Dr. Bruce F. Smith's lab at the Auburn University College of Veterinary Medicine. Samples were sequenced as 150bp paired-end reads using the NovaSeq 6000 platform with ~30x coverage at HudsonAlpha Discovery in Huntsville, AL.
 
-| File ID | Dog | Description | Whole Genome Coverage | Aligned ChrX Coverage | Marked ChrX Coverage | 
-| --- | --- | --- | --- | --------- | -------| 
-| 0001 | Buddy | Affected Male | 23.7 | 11.31 | 10.28 |
-| 0002 | Dandelion | Affected Male | 23.45 | 11.21 | 10.13 |
-| 0005 | Camelia | Carrier Female | 17.96 | 15.06 | 13.73 |
-| 0006 | Dottie | Carrier Female | 22.09 | 18.5 | 16.67 |
+| File ID | Dog | Description | Whole Genome Coverage | Aligned ChrX Coverage | Marked ChrX Coverage | Variants Chromosome X SNPs | Variants Chromosome X Indels |
+| :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: | :-----: |
+| 0001 | Buddy | Affected Male | 23.7 | 11.31 | 10.28 | 29.55 | 24.63 |
+| 0002 | Dandelion | Affected Male | 23.45 | 11.21 | 10.13 | 29.57 | 25.11 |
+| 0005 | Camelia | Carrier Female | 17.96 | 15.06 | 13.73 | 41.49 | 35.43 |
+| 0006 | Dottie | Carrier Female | 22.09 | 18.5 | 16.67 | 47.52 | 40.59 |
 
 __Table 1.__ Data description and coverage values throughout processing. 
 
@@ -36,7 +36,7 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 After hard-filtering and selecting SNPs based on quality and zygosity in [Step 4: Variant calling](4_Variant_Call.md), 1682 SNPs were found in all four samples across the entirety of the X chromosome. Of those 1682 SNPs, 380 were found to be of interest and located within the DMD gene. The table and figure below reflect this data. Figure 2 shows all intersections of SNPs within the DMD region of the X chromosome.
 
 | X Chromosome | DMD Gene |
-| ------------ | -------- |
+| :------------: | :--------: |
 | 1682        | 380      |
 
 __Table 2.__ Number of SNPs present in all four samples after quality filtering and selecting only SNPs that are hemizygous in males and heterozygous in females.
