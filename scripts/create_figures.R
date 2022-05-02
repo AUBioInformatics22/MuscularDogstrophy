@@ -66,6 +66,7 @@ label_coords4 <- barplot(cbind(raw, aligned_chrX, marked_chrX, variant_chrX) ~ i
 #    file = tables, sep = "\n")
 #close(tables)
 
+
 ##### COVERAGE PLOTS
 # generate coverage plots for each step
 
@@ -153,6 +154,58 @@ text(x = t(label_coords5), y = cbind(metrics_data$raw,
                     round(metrics_data$marked_chrX, digits = 2),
                     round(metrics_data$var_SNP, digits = 2),
                     round(metrics_data$var_INDEL, digits = 2)), cex = 0.7)
+dev.off()
+
+
+##### SNP PLOTS
+
+## UNFILTERED VS FILTERED
+
+png(filename="analysis/0_figures/4_SNP_filter.png", width = 700, height = 400)
+barplot(cbind(unfiltered, filtered) ~ sample,
+        data = SNP_data,
+        space = c(0,0.5),
+        beside = TRUE,
+        xlab = "Sample",
+        ylab = "Number of SNPs",
+        ylim = c(0,max_value_snp*1.2),
+        main = "Unfiltered vs. Filtered SNPs",
+        legend.text = FALSE,
+        #args.legend = ,
+        col = plasma(6)[3:4])
+legend("topright", inset = c(0.05,-0.1), legend = snp_legend_text,
+       fill = plasma(6)[3:4], bty = "n", xpd = TRUE)
+text(x = t(label_coords2), y = cbind(SNP_data$unfiltered,
+                                     SNP_data$filtered) + 2000,
+     labels = cbind(SNP_data$unfiltered, SNP_data$filtered))
+dev.off()
+
+## UPSET PLOT
+
+#Define sizes of intersection. (From vcf-compare output.)
+expressionInput<-c(`1` = 10,
+                   `2` = 9,
+                   `5` = 11,
+                   `6` = 17,
+                   `1&2` = 120,
+                   `1&5` = 1,
+                   `1&6` = 0,
+                   `2&5` = 0,
+                   `2&6` = 0,
+                   `5&6` = 287,
+                   `1&2&5` = 8,
+                   `1&2&6` = 3,
+                   `1&5&6` = 4,
+                   `2&5&6` = 3,
+                   `1&2&5&6` = 380)
+
+png(filename="analysis/0_figures/4_DMD_upset.png", width = 700, height = 400)
+upset(fromExpression(expressionInput), order.by = "degree",
+      sets = (c("6", "5", "2", "1")), keep.order = TRUE,
+      mainbar.y.label = "Intersection of SNPs in DMD gene",
+      sets.x.label = "No. of DMD SNPs", number.angles = 0, point.size = 3,
+      line.size = 1, empty.intersections = "on", shade.color="lightblue",
+      text.scale=c(2,1.5,1.25,0.9,2.5,1.5))
 dev.off()
 
 
