@@ -120,13 +120,14 @@ __Figure 2.__ Bar plot comparing filtered versus unfiltered SNPs in chromosome X
 
 __Table 2.__ Filtered versus unfiltered values.
 
-<img src="analysis/0_figures/good_vs_bad_coverage_IGV.png">
-
-__Figure 3.__ Comparison of "good" vs. "bad" SNPs in terms of coverage. "Good" SNPs will be supported with high coverage for all samples; in this case, sample 0001 (top of figure) shows poor coverage for this particular SNP, as evidenced by the 0001.chrX.sorted.markdup.bam Coverage track. 
-
 <img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
-__Figure 4.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
+__Figure 3.__ A screenshot of IGV showing SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
+
+<img src="analysis/0_figures/good_vs_bad_coverage_IGV.png">
+
+__Figure 4.__ Comparison of "good" vs. "bad" SNPs in terms of coverage. "Good" SNPs will be supported with high coverage for all samples; in this case, sample 0001 (top of figure) shows poor coverage for this particular SNP, as evidenced by the 0001.chrX.sorted.markdup.bam Coverage track.
+
 <br>
 
 #### Contributions
