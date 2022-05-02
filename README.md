@@ -53,7 +53,7 @@ We plan to continue this work by adding more samples (2 additional affected male
 
 1. It was difficult to determine the proper parameters to use when submitting scripts to the ASC queue. 
 2. Memory allocation -- samtools view uses more memory than it's told, so we had to give more memory to the ASC than anticipated.
-3. INDELs -- it was more challenging finding compatible tools for analyzing INDELs, so we had to exclude from this analysis at this point in time (will be included in future work).
+3. INDELs -- it was more challenging to find compatible tools for analyzing INDELs, so we had to exclude from this analysis at this point in time (will be included in future work).
 4. Discrepancy in IGV vs UCSC browser reading frames -- IGV showed an incorrect reading frame compared to UCSC, which made interpretation of the exonic SNP somewhat confusing.
 
 
