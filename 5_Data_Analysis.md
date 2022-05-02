@@ -16,7 +16,8 @@ We further narrowed our search for SNPs that were present within _exons_ of the 
 
 __Figure 1.__ A screenshot of IGV showing all SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
 
-<img src="analysis/0_figures/DMD_exon_mx.png"  alt="Exon SNP">
+<img src="analysis/0_figures/DMD_exon_mx.png"  alt="Exon SNP"> 
+<br>
 <img src="analysis/0_figures/DMD_exon_mx_zoom.png" >
 
 __Figure 2.__ Screenshot of the SNP present within a DMD exon (bottom=zoomed in). 
