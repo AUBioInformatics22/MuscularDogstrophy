@@ -18,7 +18,7 @@ __Figure 1.__ A screenshot of IGV showing all SNPs of interest within the dystro
 __Figure 2.__ Screenshot of the SNP present within a DMD exon (bottom=zoomed in). 
  
 ### Discrepancy in IGV Reading Frame
-IGV showed a discrepancy in how the reading frames were displayed. IGV showed that exon 34 was translated from the 3rd reading frame, whereas UCSC showed that it was translated from the first reading frame. 
+IGV showed a discrepancy in how the reading frames were displayed. IGV showed that exon 34 was translated from the 3rd reading frame, whereas UCSC showed that it was translated from the first reading frame. This discrepancy can be explained by IGV displaying frame 1 as the third line of translation. 
 
 <img src="analysis/0_figures/IGV_vs_UCSC_.png"  alt="IGV vs. UCSC Reading Frame">  
 
