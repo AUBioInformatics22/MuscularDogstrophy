@@ -45,6 +45,6 @@
   - Generate a bar plot of coverage, including raw, aligned, and marked data.
   - Generate a bar plot of coverage, including raw, aligned, marked, and variant data.
   - Generate a bar plot of number of SNPs, unfiltered and filtered.
-  - Generate an upset plot of the intersection between samples of SNPs in the DMD gene.
+  - Generate an upset plot of the intersection of samples SNP in the DMD gene.
   - Generate a bar plot of percent mapped.  
   - Generate a bar plot of percent duplicates.
