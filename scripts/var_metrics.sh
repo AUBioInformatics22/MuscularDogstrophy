@@ -1,5 +1,8 @@
 #!/bin/bash
 
+### Determine the number of SNPs after each stage of processing.
+### Output file can be used by create_figures.R.
+
 source /opt/asn/etc/asn-bash-profiles-special/modules.sh
 module load bcftools/1.13
 module load tabix/2013-12-16
