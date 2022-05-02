@@ -54,6 +54,15 @@ __Figure 2.__ A screenshot of IGV showing SNPs of interest within the dystrophin
 
 __Figure 3.__ Bar plot comparing filtered versus unfilterd SNPs.
 
+| Sample ID | Unfiltered | Filtered |
+| --------- | ---------- | -------- |
+| 0001      | 25,856     | 24,947   |
+| 0002      | 23,469     | 22,337   |
+| 0005      | 36,394     | 34,556   |
+| 0006      | 42,220     | 40,417   |
+
+__Table 2.__ Filtered versus Unfiltered Values.
+
 <br>
 
 #### Contributions
