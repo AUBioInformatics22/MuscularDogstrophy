@@ -6,44 +6,36 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
 
 ### Scripts
 
-- **[4_variant_call.sh](scripts/4_variant_call.sh):**  
-  - Call variants according to ploidy based on gender of dog 
-  
-  Male:   
-  ```
-  if [[ "$samplenum" == "0001" || "$samplenum" == "0002" ]]; then  
-    echo "Sample $samplenum is a male"  
-    gatk --java-options "-Xmx8G" HaplotypeCaller \
+- **[4_variant_call.sh](scripts/4_variant_call.sh):**
+1. Call variants according to ploidy based on gender of dog  
+
+Male:
+```
+  gatk --java-options "-Xmx8G" HaplotypeCaller \
       -R "$ref" \
       -I "${sample}.markdup.bam" \
       --sample-ploidy 1 \
       -L chrX \
       -O "${VCFDIR}/$sample.g.vcf.gz" \
       -ERC GVCF
-  fi
-  ```
-  
-  Female:     
-  ```
-  if [[ "$samplenum" == "0005" || "$samplenum" == "0006" ]]; then  
-    echo "Sample $samplenum is a female"  
-    gatk --java-options "-Xmx8G" HaplotypeCaller \
+```
+Female:
+```
+   gatk --java-options "-Xmx8G" HaplotypeCaller \
       -R "$ref" \
       -I "${sample}.markdup.bam" \
       --sample-ploidy 2 \
       -L chrX \
       -O "${VCFDIR}/$sample.g.vcf.gz" \
       -ERC GVCF
-  fi 
-  ```
-  - Extract SNP variants  
-  ```
+```
+  2. Extract SNP variants  
+```
   gatk SelectVariants -R "$ref" --variant "$sample.vcf.gz" --select-type-to-include SNP --output "${VCFDIR}/$sample.SNPs.vcf"
-  ```
+```
     
-  - Hard filter variants  
-   
-  ```
+  3. Hard filter variants  
+```
   gatk VariantFiltration -R "$ref" --variant "$sample.SNPs.vcf" \  
     --filter-expression "QD < 2.0" --filter-name "QD2" \  
     --filter-expression "QUAL < 30.0" --filter-name "QUAL30" \  
@@ -53,61 +45,38 @@ The script [4_variants.sh](scripts/4_variants.sh) was used to perform variant ca
     --filter-expression "MQRankSum < -12.5" --filter-name "MQRankSum-12.5" \  
     --filter-expression "ReadPosRankSum < -8.0" --filter-name "ReadPosRankSum-8" \  
     --output "$sample.SNPs.filtered.vcf" 
-  ```
-  - Determine coverage for the resulting VCF files  
-  ```
+```
+  4. Determine coverage for the resulting VCF files  
+```
   vcftools --gzvcf "$sample.SNPs.filtered.vcf.gz" --depth --out "$sample.SNPs" 
-  ```
+ ```
   
 - **[5_select_variant.sh](scripts/5_select_variant.sh)**  
-  - Select variants that are hemizygous for an alternate allele in the males:      
- ```
- for sample in "${male_samples[@]}"; do  
-  bcftools view -i 'GT="alt"' \
+  1. Select variants that are hemizygous for an alternate allele in the males:        
+```
+ bcftools view -i 'GT="alt"' \
   -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
   "${sample}.chrX.sorted.SNPs.filtered.vcf.gz" 
  ```
- ```
- bgzip -f "${sample}.chrX.sorted.SNPs.filtered.select.vcf"`  
- ```
- ```
- tabix -p vcf "${sample}.chrX.sorted.SNPs.filtered.select.vcf.gz"`
- ``` 
-    
-  - Select variants that are heterozygous for an alternate allele in the females:  
-  ```
-  for sample in "${female_samples[@]}"; do
-    bcftools view -i 'GT="het"' \
+  2. Select variants that are heterozygous for an alternate allele in the females:    
+```
+  bcftools view -i 'GT="het"' \
     -o "${sample}.chrX.sorted.SNPs.filtered.select.vcf" \
     "${sample}.chrX.sorted.SNPs.filtered.vcf.gz" `  
-  ``` 
-  
-  ```
-  bgzip -f "${sample}.chrX.sorted.SNPs.filtered.select.vcf"  
-  ```
-  
-  ```
-  tabix -p vcf "${sample}.chrX.sorted.SNPs.filtered.select.vcf.gz"  
-  ```
-  - Intersect the selected variants and find positions that are in all 4 samples   
-  ```
+```
+  3. Intersect the selected variants and find positions that are in all 4 samples   
+```
   bcftools isec \
     -n =4 -p intersect_SNP \
     0001.chrX.sorted.SNPs.filtered.select.vcf.gz \
     0002.chrX.sorted.SNPs.filtered.select.vcf.gz \
     0005.chrX.sorted.SNPs.filtered.select.vcf.gz \
     0006.chrX.sorted.SNPs.filtered.select.vcf.gz 
-   ```
-  - Merge files containing selected variants
-  ```
+```
+  4. Merge files containing selected variants
+```
   bcftools merge -f .,PASS 0000.vcf.gz 0001.vcf.gz 0002.vcf.gz 0003.vcf.gz >all_samples_SNPs.vcf
-  ```
-  ```
-  bgzip -f all_samples_SNPs.vcf
-  ```
-  ```
-  tabix -p vcf "all_samples_SNPs.vcf.gz"
-  ```
+```
 - **[create_figures.R](scripts/create_figures.R):**  
   - Generate a bar plot of coverage, including data from previous steps.  
 
