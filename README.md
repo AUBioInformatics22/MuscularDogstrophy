@@ -39,6 +39,10 @@ __Figure 1.__ Bar plot of coverage across several stages of processing (values i
 
 __Table 2.__ Number of SNPs present in all four samples after quality filtering and selecting only SNPs that are hemizygous in males and heterozygous in females.
 
+<img src="analysis/0_figures/4_DMD_upset.png">
+
+__Figure 2.__ Upset plot of the intersect between sample SNPs within the DMD gene
+
 
 ## Conclusions & Future Directions
 On the command line, the script `var_metrics.sh` was used to determine that there was an enormous amount of SNPs identified on the X chromosome and DMD gene overlapping between the samples (Table 2). Most of these SNPs were located within introns/non-coding regions. Though we expected to find no mutations within exons, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon. This SNP, located in exon 34 (position 32504947-32505117), was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. Therefore, the mutation causes a change from C to A at position 32505025 on the X chromosome. This is a silent mutation because it does not affect the encoded amino acid (Alanine). Exon 34 is translated from reading frame 1. However, the identification of this mutation expands upon prior studies seeking genotype to phenotype associations with Duchenne Muscular Dystrophy in dogs.
