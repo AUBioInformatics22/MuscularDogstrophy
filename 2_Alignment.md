@@ -28,6 +28,25 @@ For one sample (0001), we determined percent mapped for the whole genome before 
   - Generate a bar plot of coverage, including raw and aligned data.  
   - Generate a bar plot of percent mapped.  
 
+### Script Markdown: [2_align_chrX.sh ](scripts/2_align_chrX.sh)
+1.) use bwa mem to create sam (aligned sequence file)   
+`bwa mem -M -v 2 -t 8 -R "@RG\tID:$sample.$flowcell.$lane_id\tSM:$sample\tPU:$flowcell.$lane_id\tPL:Illumina\tLB:$flowcell.$lane_id" $ref $forward $reverse \   >${PROJDIR}/$sample.sam`
+ 
+2.) use samtools to convert sam to bam  
+`samtools view -Sb -@ 8 $sample.sam >$sample.bam`  
+  
+3.) use samtools to sort bam  
+`samtools sort -@ 8 -m 1500MB $sample.bam >$sample.sorted.bam`  
+  
+4.) use samtools to index the sorted bam  
+`samtools index $sample.sorted.bam`
+  
+5.) use samtools to extract the aligned chrX from the sorted bam  
+`samtools view -b -@ 8 $sample.sorted.bam chrX >"${CHRXDIR}/${sample}.chrX.sorted.bam"`  
+  
+6.) use samtools to index the chrX  
+`samtools index ${sample}.chrX.sorted.bam`
+
 ### Figures
 
 <img src="analysis/0_figures/2_coverage.png"  alt="Coverage Bar Graph">  
@@ -63,26 +82,6 @@ __Figure 2.__ A bar plot showing the percent mapped for the X chromosome for eac
 __Table 2.__ The percent mapped to the whole genome and X chromosome for each sample.  
   
 <br>
-
-### Script Markdown: [2_align_chrX.sh ](scripts/2_align_chrX.sh)
-1.) use bwa mem to create sam (aligned sequence file)   
-`bwa mem -M -v 2 -t 8 -R "@RG\tID:$sample.$flowcell.$lane_id\tSM:$sample\tPU:$flowcell.$lane_id\tPL:Illumina\tLB:$flowcell.$lane_id" $ref $forward $reverse \   >${PROJDIR}/$sample.sam`
- 
-2.) use samtools to convert sam to bam  
-`samtools view -Sb -@ 8 $sample.sam >$sample.bam`  
-  
-3.) use samtools to sort bam  
-`samtools sort -@ 8 -m 1500MB $sample.bam >$sample.sorted.bam`  
-  
-4.) use samtools to index the sorted bam  
-`samtools index $sample.sorted.bam`
-  
-5.) use samtools to extract the aligned chrX from the sorted bam  
-`samtools view -b -@ 8 $sample.sorted.bam chrX >"${CHRXDIR}/${sample}.chrX.sorted.bam"`  
-  
-6.) use samtools to index the chrX  
-`samtools index ${sample}.chrX.sorted.bam`
-
 
 ### Contributions
 
