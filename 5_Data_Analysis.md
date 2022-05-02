@@ -8,13 +8,13 @@ After isolating a list of SNPs that were common between the affected and carrier
 
 <img src="analysis/0_figures/DMD_gene_SNPs.png"  alt="SNPs in DMD Gene">  
 
+__Figure 1.__ A screenshot of IGV showing all SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
+
+<br>
 
 We further narrowed our search for SNPs that were present within _exons_ of the DMD gene. Though we expected to find none, since prior cDNA sequencing indicated no mutations, one SNP was identified within an exon (at position 32505025). This SNP, located in exon 34 (position 32504947-32505117), was hemizygous for C in the affected males, and heterozygous for A/C in the carrier females. Therefore, the mutation causes a change from C to A at position 32505025 on the X chromosome. Exon 34 is translated from reading frame 1. This results in a silent mutation because it does not affect the encoded amino acid (Alanine), and therefore, is not predicted to affect the protein's function. However, the identification of this mutation expands on prior studies seeking genotype to phenotype associations with Duchenne Muscular Dystrophy in dogs.
 
 <br> 
-
-
-__Figure 1.__ A screenshot of IGV showing all SNPs of interest within the dystrophin (DMD) gene. Light blue blocks correspond to homozygous (hemizygous) SNPs within the males while dark blue corresponds to heterozygous SNPs within the females.
 
 <img src="analysis/0_figures/DMD_exon_mx.png"  alt="Exon SNP"> 
 <br>
@@ -22,6 +22,7 @@ __Figure 1.__ A screenshot of IGV showing all SNPs of interest within the dystro
 
 __Figure 2.__ Screenshot of the SNP present within a DMD exon (bottom=zoomed in). 
 
+<br>
 
 Coverage quality for the exon 34 SNP was highest in sample 0001 (Buddy), 0006 (Dottie), and 0002 (Snapdragon). Sample 0005 (Camelia) showed approximately 1/4 coverage compared to the others.  
 
