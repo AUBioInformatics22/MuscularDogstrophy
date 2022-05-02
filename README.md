@@ -12,7 +12,7 @@ Muscular dystrophy is a term that includes many inherited diseases that affects 
 
 <img src="analysis/0_figures/Muscular Dogstrophy Flowchart.png">
 
-## Samples
+## Samples and Results
 Genomic DNA was isolated from 4 affected males and 4 carrier females from the Springer Spaniel Duchenne-Like Muscular Dystrophy dog colony in Dr. Bruce F. Smith's lab at the Auburn University College of Veterinary Medicine. Samples were sequenced as 150bp paired-end reads using the NovaSeq 6000 platform with ~30x coverage at HudsonAlpha Discovery in Huntsville, AL.
 
 | File ID | Dog | Description | Whole Genome Coverage | Aligned ChrX Coverage | Marked ChrX Coverage | 
@@ -30,9 +30,6 @@ __Table 1.__ Data description and coverage values throughout processing.
 
 __Figure 1.__ Bar plot of coverage across several stages of processing (values in Table 1).
 
-
-
-## Results  
 
 ### Number of SNPs
 
